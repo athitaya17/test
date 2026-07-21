@@ -1,0 +1,109 @@
+[2026-05-19T06:09:11.308+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-19T06:09:11.337+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_instant scheduled__2026-05-19T00:00:00+00:00 [queued]>
+[2026-05-19T06:09:11.348+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_instant scheduled__2026-05-19T00:00:00+00:00 [queued]>
+[2026-05-19T06:09:11.350+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 3
+[2026-05-19T06:09:11.365+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): era5_instant> on 2026-05-19 00:00:00+00:00
+[2026-05-19T06:09:11.375+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1593) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-19T06:09:11.378+0000] {standard_task_runner.py:63} INFO - Started process 1595 to run task
+[2026-05-19T06:09:11.380+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_ecmwf_pipeline', 'era5_instant', 'scheduled__2026-05-19T00:00:00+00:00', '--job-id', '128', '--raw', '--subdir', 'DAGS_FOLDER/era5_dag.py', '--cfg-path', '/tmp/tmpgs7b55z2']
+[2026-05-19T06:09:11.384+0000] {standard_task_runner.py:91} INFO - Job 128: Subtask era5_instant
+[2026-05-19T06:09:11.476+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_ecmwf_pipeline.era5_instant scheduled__2026-05-19T00:00:00+00:00 [running]> on host 5171a12238bf
+[2026-05-19T06:09:11.616+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='era5_ecmwf_pipeline' AIRFLOW_CTX_TASK_ID='era5_instant' AIRFLOW_CTX_EXECUTION_DATE='2026-05-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-19T00:00:00+00:00'
+[2026-05-19T06:09:11.618+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-19T06:09:11.651+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:09:11 | INFO     | Log file: logs/era5/2026/05/19/era5_20260519.log
+[2026-05-19T06:09:11.651+0000] {era5_logger.py:40} INFO - Log file: logs/era5/2026/05/19/era5_20260519.log
+[2026-05-19T06:09:12.674+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:09:12,674 INFO [2026-05-14T00:00:00Z] Upcoming essential maintenance sessions on Data Stores underlying infrastructure on 19 May. Service disruption expected. For further details, please [visit our forum announcement](https://forum.ecmwf.int/t/upcoming-essential-maintenance-sessions-on-data-stores-underlying-infrastructure/14954).
+[2026-05-19T06:09:12.674+0000] {legacy_client.py:192} INFO - [2026-05-14T00:00:00Z] Upcoming essential maintenance sessions on Data Stores underlying infrastructure on 19 May. Service disruption expected. For further details, please [visit our forum announcement](https://forum.ecmwf.int/t/upcoming-essential-maintenance-sessions-on-data-stores-underlying-infrastructure/14954).
+[2026-05-19T06:09:12.677+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:09:12 | INFO     | === ERA5 PIPELINE START ===
+[2026-05-19T06:09:12.676+0000] {era5_functions.py:264} INFO - === ERA5 PIPELINE START ===
+[2026-05-19T06:09:12.679+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:09:12 | INFO     | ===================================
+[2026-05-19T06:09:12.678+0000] {era5_functions.py:213} INFO - ===================================
+[2026-05-19T06:09:12.680+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:09:12 | INFO     | JOB: instant | 20260519
+[2026-05-19T06:09:12.680+0000] {era5_functions.py:214} INFO - JOB: instant | 20260519
+[2026-05-19T06:09:12.682+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:09:12 | INFO     | ===================================
+[2026-05-19T06:09:12.682+0000] {era5_functions.py:215} INFO - ===================================
+[2026-05-19T06:09:12.691+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:09:12 | INFO     | [DOWNLOAD] attempt 1/5 → instant_20260519.nc
+[2026-05-19T06:09:12.691+0000] {era5_functions.py:97} INFO - [DOWNLOAD] attempt 1/5 → instant_20260519.nc
+[2026-05-19T06:09:12.710+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:09:12 | INFO     | [DOWNLOAD] START → instant_20260519.nc
+[2026-05-19T06:09:12.710+0000] {era5_functions.py:78} INFO - [DOWNLOAD] START → instant_20260519.nc
+[2026-05-19T06:09:13.325+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:09:13 | WARNING  | [DOWNLOAD] failed → 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-05-14 06:00
+[2026-05-19T06:09:13.325+0000] {era5_functions.py:115} WARNING - [DOWNLOAD] failed → 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-05-14 06:00
+[2026-05-19T06:10:13.321+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:10:13 | INFO     | [DOWNLOAD] attempt 2/5 → instant_20260519.nc
+[2026-05-19T06:10:13.321+0000] {era5_functions.py:97} INFO - [DOWNLOAD] attempt 2/5 → instant_20260519.nc
+[2026-05-19T06:10:13.345+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:10:13 | INFO     | [DOWNLOAD] START → instant_20260519.nc
+[2026-05-19T06:10:13.345+0000] {era5_functions.py:78} INFO - [DOWNLOAD] START → instant_20260519.nc
+[2026-05-19T06:10:15.368+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:10:15 | WARNING  | [DOWNLOAD] failed → 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-05-14 06:00
+[2026-05-19T06:10:15.367+0000] {era5_functions.py:115} WARNING - [DOWNLOAD] failed → 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-05-14 06:00
+[2026-05-19T06:11:15.368+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:11:15 | INFO     | [DOWNLOAD] attempt 3/5 → instant_20260519.nc
+[2026-05-19T06:11:15.367+0000] {era5_functions.py:97} INFO - [DOWNLOAD] attempt 3/5 → instant_20260519.nc
+[2026-05-19T06:11:15.399+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:11:15 | INFO     | [DOWNLOAD] START → instant_20260519.nc
+[2026-05-19T06:11:15.398+0000] {era5_functions.py:78} INFO - [DOWNLOAD] START → instant_20260519.nc
+[2026-05-19T06:11:16.458+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:11:16 | WARNING  | [DOWNLOAD] failed → 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-05-14 06:00
+[2026-05-19T06:11:16.458+0000] {era5_functions.py:115} WARNING - [DOWNLOAD] failed → 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-05-14 06:00
+[2026-05-19T06:12:16.454+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:12:16 | INFO     | [DOWNLOAD] attempt 4/5 → instant_20260519.nc
+[2026-05-19T06:12:16.454+0000] {era5_functions.py:97} INFO - [DOWNLOAD] attempt 4/5 → instant_20260519.nc
+[2026-05-19T06:12:16.480+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:12:16 | INFO     | [DOWNLOAD] START → instant_20260519.nc
+[2026-05-19T06:12:16.480+0000] {era5_functions.py:78} INFO - [DOWNLOAD] START → instant_20260519.nc
+[2026-05-19T06:12:17.915+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:12:17 | WARNING  | [DOWNLOAD] failed → 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-05-14 06:00
+[2026-05-19T06:12:17.915+0000] {era5_functions.py:115} WARNING - [DOWNLOAD] failed → 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-05-14 06:00
+[2026-05-19T06:13:17.914+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:13:17 | INFO     | [DOWNLOAD] attempt 5/5 → instant_20260519.nc
+[2026-05-19T06:13:17.913+0000] {era5_functions.py:97} INFO - [DOWNLOAD] attempt 5/5 → instant_20260519.nc
+[2026-05-19T06:13:17.947+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:13:17 | INFO     | [DOWNLOAD] START → instant_20260519.nc
+[2026-05-19T06:13:17.947+0000] {era5_functions.py:78} INFO - [DOWNLOAD] START → instant_20260519.nc
+[2026-05-19T06:13:19.322+0000] {logging_mixin.py:188} WARNING - 2026-05-19 06:13:19 | WARNING  | [DOWNLOAD] failed → 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-05-14 06:00
+[2026-05-19T06:13:19.322+0000] {era5_functions.py:115} WARNING - [DOWNLOAD] failed → 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-05-14 06:00
+[2026-05-19T06:13:19.326+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-19T06:13:19.328+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/era5_dag.py", line 52, in task_instant_fn
+    run_era5(
+  File "/opt/airflow/dags/era5_functions.py", line 266, in run_era5
+    process_job(client, job_name, y, m, d, dstr, log)
+  File "/opt/airflow/dags/era5_functions.py", line 221, in process_job
+    result = download_nc_with_retry(client, raw_nc, params, log)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/era5_functions.py", line 120, in download_nc_with_retry
+    raise RuntimeError(f"download failed: {fname}")
+RuntimeError: download failed: instant_20260519.nc
+[2026-05-19T06:13:19.367+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=era5_ecmwf_pipeline, task_id=era5_instant, run_id=scheduled__2026-05-19T00:00:00+00:00, execution_date=20260519T000000, start_date=20260519T060911, end_date=20260519T061319
+[2026-05-19T06:13:19.394+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 128 for task era5_instant (download failed: instant_20260519.nc; 1595)
+[2026-05-19T06:13:19.450+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-05-19T06:13:19.475+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-19T06:13:19.479+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

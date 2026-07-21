@@ -1,0 +1,191 @@
+[2026-07-20T03:59:15.569+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-07-20T03:59:15.602+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_download_pipeline.era5_instant manual__2026-07-20T03:59:12.724392+00:00 [queued]>
+[2026-07-20T03:59:15.614+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_download_pipeline.era5_instant manual__2026-07-20T03:59:12.724392+00:00 [queued]>
+[2026-07-20T03:59:15.615+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-07-20T03:59:15.632+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): era5_instant> on 2026-07-20 03:59:12.724392+00:00
+[2026-07-20T03:59:15.646+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=55751) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-07-20T03:59:15.649+0000] {standard_task_runner.py:63} INFO - Started process 55753 to run task
+[2026-07-20T03:59:15.649+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_download_pipeline', 'era5_instant', 'manual__2026-07-20T03:59:12.724392+00:00', '--job-id', '2425', '--raw', '--subdir', 'DAGS_FOLDER/era5_dag.py', '--cfg-path', '/tmp/tmpudt0u5th']
+[2026-07-20T03:59:15.655+0000] {standard_task_runner.py:91} INFO - Job 2425: Subtask era5_instant
+[2026-07-20T03:59:15.743+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_download_pipeline.era5_instant manual__2026-07-20T03:59:12.724392+00:00 [running]> on host 01cd476fb21a
+[2026-07-20T03:59:15.868+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='era5' AIRFLOW_CTX_DAG_ID='era5_download_pipeline' AIRFLOW_CTX_TASK_ID='era5_instant' AIRFLOW_CTX_EXECUTION_DATE='2026-07-20T03:59:12.724392+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-07-20T03:59:12.724392+00:00'
+[2026-07-20T03:59:15.871+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-07-20T03:59:16.964+0000] {logging_mixin.py:188} WARNING - 2026-07-20 03:59:16 [INFO] === START ERA5 SYNC job=instant ===
+[2026-07-20T03:59:16.964+0000] {era5_functions.py:532} INFO - === START ERA5 SYNC job=instant ===
+[2026-07-20T03:59:16.967+0000] {logging_mixin.py:188} WARNING - 2026-07-20 03:59:16 [INFO] --- SYNC instant 20260720 ---
+[2026-07-20T03:59:16.967+0000] {era5_functions.py:169} INFO - --- SYNC instant 20260720 ---
+[2026-07-20T03:59:16.970+0000] {logging_mixin.py:188} WARNING - 2026-07-20 03:59:16 [INFO] CDS download 2026-07-20 attempt 1/3
+[2026-07-20T03:59:16.970+0000] {era5_functions.py:109} INFO - CDS download 2026-07-20 attempt 1/3
+[2026-07-20T03:59:17.551+0000] {logging_mixin.py:188} WARNING - 2026-07-20 03:59:17 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 03:00
+[2026-07-20T03:59:17.551+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 03:00
+[2026-07-20T04:00:17.550+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:00:17 [INFO] CDS download 2026-07-20 attempt 2/3
+[2026-07-20T04:00:17.550+0000] {era5_functions.py:109} INFO - CDS download 2026-07-20 attempt 2/3
+[2026-07-20T04:00:19.162+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:00:19 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:00:19.162+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:01:19.160+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:01:19 [INFO] CDS download 2026-07-20 attempt 3/3
+[2026-07-20T04:01:19.160+0000] {era5_functions.py:109} INFO - CDS download 2026-07-20 attempt 3/3
+[2026-07-20T04:01:21.522+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:01:21 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:01:21.522+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:01:21.529+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:01:21 [INFO] --- SYNC instant 20260719 ---
+[2026-07-20T04:01:21.528+0000] {era5_functions.py:169} INFO - --- SYNC instant 20260719 ---
+[2026-07-20T04:01:21.534+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:01:21 [INFO] CDS download 2026-07-19 attempt 1/3
+[2026-07-20T04:01:21.533+0000] {era5_functions.py:109} INFO - CDS download 2026-07-19 attempt 1/3
+[2026-07-20T04:01:22.123+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:01:22 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:01:22.122+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:02:22.122+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:02:22 [INFO] CDS download 2026-07-19 attempt 2/3
+[2026-07-20T04:02:22.122+0000] {era5_functions.py:109} INFO - CDS download 2026-07-19 attempt 2/3
+[2026-07-20T04:02:24.158+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:02:24 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:02:24.158+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:03:24.160+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:03:24 [INFO] CDS download 2026-07-19 attempt 3/3
+[2026-07-20T04:03:24.160+0000] {era5_functions.py:109} INFO - CDS download 2026-07-19 attempt 3/3
+[2026-07-20T04:03:25.573+0000] {http.py:514} WARNING - Recovering from HTTP error [502 Bad Gateway], attempt 1 of 500
+[2026-07-20T04:03:25.576+0000] {http.py:537} WARNING - Retrying in 120 seconds
+[2026-07-20T04:05:25.566+0000] {http.py:544} INFO - Retrying now...
+[2026-07-20T04:05:26.659+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:05:26 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:05:26.659+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:05:26.663+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:05:26 [INFO] --- SYNC instant 20260718 ---
+[2026-07-20T04:05:26.662+0000] {era5_functions.py:169} INFO - --- SYNC instant 20260718 ---
+[2026-07-20T04:05:26.664+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:05:26 [INFO] CDS download 2026-07-18 attempt 1/3
+[2026-07-20T04:05:26.664+0000] {era5_functions.py:109} INFO - CDS download 2026-07-18 attempt 1/3
+[2026-07-20T04:05:27.257+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:05:27 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:05:27.257+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:06:27.257+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:06:27 [INFO] CDS download 2026-07-18 attempt 2/3
+[2026-07-20T04:06:27.257+0000] {era5_functions.py:109} INFO - CDS download 2026-07-18 attempt 2/3
+[2026-07-20T04:06:28.716+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:06:28 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:06:28.716+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:07:28.718+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:07:28 [INFO] CDS download 2026-07-18 attempt 3/3
+[2026-07-20T04:07:28.718+0000] {era5_functions.py:109} INFO - CDS download 2026-07-18 attempt 3/3
+[2026-07-20T04:07:30.140+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:07:30 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:07:30.140+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:07:30.145+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:07:30 [INFO] --- SYNC instant 20260717 ---
+[2026-07-20T04:07:30.145+0000] {era5_functions.py:169} INFO - --- SYNC instant 20260717 ---
+[2026-07-20T04:07:30.149+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:07:30 [INFO] CDS download 2026-07-17 attempt 1/3
+[2026-07-20T04:07:30.149+0000] {era5_functions.py:109} INFO - CDS download 2026-07-17 attempt 1/3
+[2026-07-20T04:07:30.812+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:07:30 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:07:30.812+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:08:30.811+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:08:30 [INFO] CDS download 2026-07-17 attempt 2/3
+[2026-07-20T04:08:30.810+0000] {era5_functions.py:109} INFO - CDS download 2026-07-17 attempt 2/3
+[2026-07-20T04:08:32.195+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:08:32 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:08:32.195+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:09:32.196+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:09:32 [INFO] CDS download 2026-07-17 attempt 3/3
+[2026-07-20T04:09:32.196+0000] {era5_functions.py:109} INFO - CDS download 2026-07-17 attempt 3/3
+[2026-07-20T04:09:33.777+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:09:33 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:09:33.777+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:09:33.783+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:09:33 [INFO] --- SYNC instant 20260716 ---
+[2026-07-20T04:09:33.783+0000] {era5_functions.py:169} INFO - --- SYNC instant 20260716 ---
+[2026-07-20T04:09:33.787+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:09:33 [INFO] CDS download 2026-07-16 attempt 1/3
+[2026-07-20T04:09:33.787+0000] {era5_functions.py:109} INFO - CDS download 2026-07-16 attempt 1/3
+[2026-07-20T04:09:34.437+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:09:34 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:09:34.436+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:10:34.437+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:10:34 [INFO] CDS download 2026-07-16 attempt 2/3
+[2026-07-20T04:10:34.437+0000] {era5_functions.py:109} INFO - CDS download 2026-07-16 attempt 2/3
+[2026-07-20T04:10:35.819+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:10:35 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:10:35.819+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:11:35.818+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:11:35 [INFO] CDS download 2026-07-16 attempt 3/3
+[2026-07-20T04:11:35.817+0000] {era5_functions.py:109} INFO - CDS download 2026-07-16 attempt 3/3
+[2026-07-20T04:11:37.185+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:11:37 [WARNING] CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:11:37.184+0000] {era5_functions.py:142} WARNING - CDS download failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-07-15 04:00
+[2026-07-20T04:11:37.189+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:11:37 [INFO] --- SYNC instant 20260715 ---
+[2026-07-20T04:11:37.188+0000] {era5_functions.py:169} INFO - --- SYNC instant 20260715 ---
+[2026-07-20T04:11:37.193+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:11:37 [INFO] CDS download 2026-07-15 attempt 1/3
+[2026-07-20T04:11:37.193+0000] {era5_functions.py:109} INFO - CDS download 2026-07-15 attempt 1/3
+[2026-07-20T04:11:38.167+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:11:38,167 INFO Request ID is 3b12afd8-bdba-4fb1-807a-6382841e2958
+[2026-07-20T04:11:38.167+0000] {legacy_client.py:192} INFO - Request ID is 3b12afd8-bdba-4fb1-807a-6382841e2958
+[2026-07-20T04:11:39.328+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:11:39,327 INFO status has been updated to accepted
+[2026-07-20T04:11:39.327+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-20T04:12:13.244+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:12:13,243 INFO status has been updated to running
+[2026-07-20T04:12:13.243+0000] {legacy_client.py:192} INFO - status has been updated to running
+[2026-07-20T04:12:30.560+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:12:30,560 INFO status has been updated to successful
+[2026-07-20T04:12:30.560+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-20T04:12:30.988+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2026-07-20/ad8459cbaa2407d4f1073ef1a4ea8ad0.nc
+[2026-07-20T04:12:31.648+0000] {logging_mixin.py:188} WARNING - ad8459cbaa2407d4f1073ef1a4ea8ad0.nc:   0%|          | 0.00/612k [00:00<?, ?B/s]
+[2026-07-20T04:12:33.264+0000] {logging_mixin.py:188} WARNING - ad8459cbaa2407d4f1073ef1a4ea8ad0.nc: 100%|##########| 612k/612k [00:01<00:00, 389kB/s]
+[2026-07-20T04:12:33.268+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-07-20T04:12:33.596+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:12:33 [INFO] CDS available: 2026-07-15 | 5 timestep(s)
+[2026-07-20T04:12:33.596+0000] {era5_functions.py:131} INFO - CDS available: 2026-07-15 | 5 timestep(s)
+[2026-07-20T04:12:33.666+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:12:33 [INFO] New timestep: 1
+[2026-07-20T04:12:33.666+0000] {era5_functions.py:253} INFO - New timestep: 1
+[2026-07-20T04:12:34.047+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:12:34 [INFO] NC updated: /opt/***/era5/ecmwf/data/nc/_raw/2026/07/15/instant_20260715.nc | 5 timestep(s)
+[2026-07-20T04:12:34.047+0000] {era5_functions.py:326} INFO - NC updated: /opt/***/era5/ecmwf/data/nc/_raw/2026/07/15/instant_20260715.nc | 5 timestep(s)
+[2026-07-20T04:12:34.242+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:12:34 [INFO] TIF updated: t2m | bands=5
+[2026-07-20T04:12:34.242+0000] {era5_functions.py:492} INFO - TIF updated: t2m | bands=5
+[2026-07-20T04:12:34.303+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:12:34 [INFO] TIF updated: d2m | bands=5
+[2026-07-20T04:12:34.303+0000] {era5_functions.py:492} INFO - TIF updated: d2m | bands=5
+[2026-07-20T04:12:34.379+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:12:34 [INFO] TIF updated: sp | bands=5
+[2026-07-20T04:12:34.379+0000] {era5_functions.py:492} INFO - TIF updated: sp | bands=5
+[2026-07-20T04:12:34.441+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:12:34 [INFO] TIF updated: blh | bands=5
+[2026-07-20T04:12:34.440+0000] {era5_functions.py:492} INFO - TIF updated: blh | bands=5
+[2026-07-20T04:12:34.498+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:12:34 [INFO] TIF updated: u10 | bands=5
+[2026-07-20T04:12:34.498+0000] {era5_functions.py:492} INFO - TIF updated: u10 | bands=5
+[2026-07-20T04:12:34.557+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:12:34 [INFO] TIF updated: v10 | bands=5
+[2026-07-20T04:12:34.556+0000] {era5_functions.py:492} INFO - TIF updated: v10 | bands=5
+[2026-07-20T04:12:34.562+0000] {logging_mixin.py:188} WARNING - 2026-07-20 04:12:34 [INFO] === END ERA5 SYNC job=instant ===
+[2026-07-20T04:12:34.562+0000] {era5_functions.py:555} INFO - === END ERA5 SYNC job=instant ===
+[2026-07-20T04:12:34.564+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-07-20T04:12:34.564+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-07-20T04:12:34.578+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=era5_download_pipeline, task_id=era5_instant, run_id=manual__2026-07-20T03:59:12.724392+00:00, execution_date=20260720T035912, start_date=20260720T035915, end_date=20260720T041234
+[2026-07-20T04:12:34.638+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-07-20T04:12:34.661+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-07-20T04:12:34.665+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

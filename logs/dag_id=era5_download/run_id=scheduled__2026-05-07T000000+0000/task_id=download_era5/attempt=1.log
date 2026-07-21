@@ -1,0 +1,42 @@
+[2026-05-08T08:55:18.042+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-08T08:55:18.069+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_download.download_era5 scheduled__2026-05-07T00:00:00+00:00 [queued]>
+[2026-05-08T08:55:18.080+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_download.download_era5 scheduled__2026-05-07T00:00:00+00:00 [queued]>
+[2026-05-08T08:55:18.081+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-05-08T08:55:18.097+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): download_era5> on 2026-05-07 00:00:00+00:00
+[2026-05-08T08:55:18.106+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=84) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-08T08:55:18.109+0000] {standard_task_runner.py:63} INFO - Started process 85 to run task
+[2026-05-08T08:55:18.110+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_download', 'download_era5', 'scheduled__2026-05-07T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/era5_ecmwf.py', '--cfg-path', '/tmp/tmpjwqej16m']
+[2026-05-08T08:55:18.112+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask download_era5
+[2026-05-08T08:55:18.207+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_download.download_era5 scheduled__2026-05-07T00:00:00+00:00 [running]> on host dc72f1ba5704
+[2026-05-08T08:55:18.330+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='era5_download' AIRFLOW_CTX_TASK_ID='download_era5' AIRFLOW_CTX_EXECUTION_DATE='2026-05-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-07T00:00:00+00:00'
+[2026-05-08T08:55:18.332+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-08T08:55:18.365+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-08T08:55:18.367+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/scripts/download_era5.py']
+[2026-05-08T08:55:18.384+0000] {subprocess.py:86} INFO - Output:
+[2026-05-08T08:55:18.474+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-05-08T08:55:18.476+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/download_era5.py", line 1, in <module>
+[2026-05-08T08:55:18.478+0000] {subprocess.py:93} INFO -     import cdsapi
+[2026-05-08T08:55:18.479+0000] {subprocess.py:93} INFO - ModuleNotFoundError: No module named 'cdsapi'
+[2026-05-08T08:55:18.483+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-05-08T08:55:18.485+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-08T08:55:18.499+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-05-08T08:55:18.505+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=era5_download, task_id=download_era5, run_id=scheduled__2026-05-07T00:00:00+00:00, execution_date=20260507T000000, start_date=20260508T085518, end_date=20260508T085518
+[2026-05-08T08:55:18.523+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 5 for task download_era5 (Bash command failed. The command returned a non-zero exit code 1.; 85)
+[2026-05-08T08:55:18.568+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-05-08T08:55:18.588+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-08T08:55:18.592+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

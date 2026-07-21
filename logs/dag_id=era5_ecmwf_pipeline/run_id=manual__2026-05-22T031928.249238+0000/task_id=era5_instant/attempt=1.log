@@ -1,0 +1,55 @@
+[2026-05-22T03:19:30.869+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-22T03:19:30.898+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_instant manual__2026-05-22T03:19:28.249238+00:00 [queued]>
+[2026-05-22T03:19:30.908+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_instant manual__2026-05-22T03:19:28.249238+00:00 [queued]>
+[2026-05-22T03:19:30.910+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-05-22T03:19:30.926+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): era5_instant> on 2026-05-22 03:19:28.249238+00:00
+[2026-05-22T03:19:30.939+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=75) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-22T03:19:30.942+0000] {standard_task_runner.py:63} INFO - Started process 79 to run task
+[2026-05-22T03:19:30.941+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_ecmwf_pipeline', 'era5_instant', 'manual__2026-05-22T03:19:28.249238+00:00', '--job-id', '299', '--raw', '--subdir', 'DAGS_FOLDER/era5_dag.py', '--cfg-path', '/tmp/tmpis8nkp39']
+[2026-05-22T03:19:30.945+0000] {standard_task_runner.py:91} INFO - Job 299: Subtask era5_instant
+[2026-05-22T03:19:31.039+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_ecmwf_pipeline.era5_instant manual__2026-05-22T03:19:28.249238+00:00 [running]> on host 2994af8b4501
+[2026-05-22T03:19:31.163+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='era5_ecmwf_pipeline' AIRFLOW_CTX_TASK_ID='era5_instant' AIRFLOW_CTX_EXECUTION_DATE='2026-05-22T03:19:28.249238+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-22T03:19:28.249238+00:00'
+[2026-05-22T03:19:31.165+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-22T03:19:31.202+0000] {logging_mixin.py:188} INFO - RUN → instant | 2026-05-17
+[2026-05-22T03:19:31.215+0000] {era5_logger.py:51} INFO - Log file: logs/era5/2026/05/17/era5_20260517.log
+[2026-05-22T03:19:31.217+0000] {era5_functions.py:322} INFO - ERA5 [INSTANT] START: 2026-05-17
+[2026-05-22T03:19:32.245+0000] {era5_functions.py:285} INFO - ============================================================
+[2026-05-22T03:19:32.247+0000] {era5_functions.py:286} INFO - JOB : INSTANT | 2026-05-17
+[2026-05-22T03:19:32.248+0000] {era5_functions.py:287} INFO - VARS: ['t2m', 'd2m', 'sp', 'blh', 'u10', 'v10']
+[2026-05-22T03:19:32.249+0000] {era5_functions.py:288} INFO - ============================================================
+[2026-05-22T03:19:32.611+0000] {era5_functions.py:63} WARNING - [VALIDATE NC] instant_20260517.nc → NOT READY (4/24)
+[2026-05-22T03:19:32.614+0000] {era5_functions.py:123} WARNING - [NC] ERA5 not ready → instant_20260517.nc
+[2026-05-22T03:19:32.707+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-22T03:19:32.708+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/era5_dag.py", line 40, in run_job
+    run_era5(
+  File "/opt/airflow/dags/era5_functions.py", line 324, in run_era5
+    process_job(
+  File "/opt/airflow/dags/era5_functions.py", line 292, in process_job
+    convert_nc_to_tif(
+  File "/opt/airflow/dags/era5_functions.py", line 217, in convert_nc_to_tif
+    os.remove(tif_path)
+PermissionError: [Errno 13] Permission denied: '/opt/airflow/era5/ecmwf/data/tif/2026/05/17/t2m_20260517.tif'
+[2026-05-22T03:19:32.735+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=era5_ecmwf_pipeline, task_id=era5_instant, run_id=manual__2026-05-22T03:19:28.249238+00:00, execution_date=20260522T031928, start_date=20260522T031930, end_date=20260522T031932
+[2026-05-22T03:19:32.757+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 299 for task era5_instant ([Errno 13] Permission denied: '/opt/airflow/era5/ecmwf/data/tif/2026/05/17/t2m_20260517.tif'; 79)
+[2026-05-22T03:19:32.803+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-05-22T03:19:32.825+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-22T03:19:32.829+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

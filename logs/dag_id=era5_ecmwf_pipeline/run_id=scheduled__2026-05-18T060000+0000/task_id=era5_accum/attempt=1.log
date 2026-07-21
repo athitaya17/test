@@ -1,0 +1,34 @@
+[2026-05-18T12:00:01.832+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-18T12:00:01.857+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_accum scheduled__2026-05-18T06:00:00+00:00 [queued]>
+[2026-05-18T12:00:01.867+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_accum scheduled__2026-05-18T06:00:00+00:00 [queued]>
+[2026-05-18T12:00:01.869+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 3
+[2026-05-18T12:00:01.883+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): era5_accum> on 2026-05-18 06:00:00+00:00
+[2026-05-18T12:00:01.893+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2190) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-18T12:00:01.896+0000] {standard_task_runner.py:63} INFO - Started process 2195 to run task
+[2026-05-18T12:00:01.896+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_ecmwf_pipeline', 'era5_accum', 'scheduled__2026-05-18T06:00:00+00:00', '--job-id', '110', '--raw', '--subdir', 'DAGS_FOLDER/era5_dag.py', '--cfg-path', '/tmp/tmpj9po7zd1']
+[2026-05-18T12:00:01.900+0000] {standard_task_runner.py:91} INFO - Job 110: Subtask era5_accum
+[2026-05-18T12:00:01.981+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_ecmwf_pipeline.era5_accum scheduled__2026-05-18T06:00:00+00:00 [running]> on host be3a3f5823bd
+[2026-05-18T12:00:02.085+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='era5_ecmwf_pipeline' AIRFLOW_CTX_TASK_ID='era5_accum' AIRFLOW_CTX_EXECUTION_DATE='2026-05-18T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-18T06:00:00+00:00'
+[2026-05-18T12:00:02.088+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-18T12:00:02.128+0000] {logging_mixin.py:188} WARNING - 2026-05-18 12:00:02 | INFO     | Log file: logs/era5/2026/05/13/era5_20260513.log
+[2026-05-18T12:00:02.127+0000] {era5_logger.py:40} INFO - Log file: logs/era5/2026/05/13/era5_20260513.log
+[2026-05-18T12:00:03.161+0000] {logging_mixin.py:188} WARNING - 2026-05-18 12:00:03,160 INFO [2026-05-14T00:00:00Z] Upcoming essential maintenance sessions on Data Stores underlying infrastructure on 19 May. Service disruption expected. For further details, please [visit our forum announcement](https://forum.ecmwf.int/t/upcoming-essential-maintenance-sessions-on-data-stores-underlying-infrastructure/14954).
+[2026-05-18T12:00:03.160+0000] {legacy_client.py:192} INFO - [2026-05-14T00:00:00Z] Upcoming essential maintenance sessions on Data Stores underlying infrastructure on 19 May. Service disruption expected. For further details, please [visit our forum announcement](https://forum.ecmwf.int/t/upcoming-essential-maintenance-sessions-on-data-stores-underlying-infrastructure/14954).
+[2026-05-18T12:00:03.165+0000] {logging_mixin.py:188} WARNING - 2026-05-18 12:00:03 | INFO     | === ERA5 PIPELINE START ===
+[2026-05-18T12:00:03.165+0000] {era5_functions.py:266} INFO - === ERA5 PIPELINE START ===
+[2026-05-18T12:00:03.168+0000] {logging_mixin.py:188} WARNING - 2026-05-18 12:00:03 | INFO     | JOB accum 20260513
+[2026-05-18T12:00:03.168+0000] {era5_functions.py:180} INFO - JOB accum 20260513
+[2026-05-18T12:00:03.522+0000] {logging_mixin.py:188} WARNING - 2026-05-18 12:00:03 | WARNING  | [VALIDATE] accum_20260513.nc → not ready 9/24
+[2026-05-18T12:00:03.522+0000] {era5_functions.py:55} WARNING - [VALIDATE] accum_20260513.nc → not ready 9/24
+[2026-05-18T12:00:03.526+0000] {logging_mixin.py:188} WARNING - 2026-05-18 12:00:03 | WARNING  | not ready → skip this run (wait next 6h)
+[2026-05-18T12:00:03.525+0000] {era5_functions.py:192} WARNING - not ready → skip this run (wait next 6h)
+[2026-05-18T12:00:03.527+0000] {logging_mixin.py:188} WARNING - 2026-05-18 12:00:03 | INFO     | === DONE ===
+[2026-05-18T12:00:03.527+0000] {era5_functions.py:270} INFO - === DONE ===
+[2026-05-18T12:00:03.529+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-05-18T12:00:03.530+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-18T12:00:03.544+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=era5_ecmwf_pipeline, task_id=era5_accum, run_id=scheduled__2026-05-18T06:00:00+00:00, execution_date=20260518T060000, start_date=20260518T120001, end_date=20260518T120003
+[2026-05-18T12:00:03.599+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-18T12:00:03.621+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-18T12:00:03.625+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

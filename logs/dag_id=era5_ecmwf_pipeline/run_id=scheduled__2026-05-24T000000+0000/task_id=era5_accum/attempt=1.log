@@ -1,0 +1,69 @@
+[2026-05-24T01:00:01.720+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-24T01:00:01.743+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_accum scheduled__2026-05-24T00:00:00+00:00 [queued]>
+[2026-05-24T01:00:01.754+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_accum scheduled__2026-05-24T00:00:00+00:00 [queued]>
+[2026-05-24T01:00:01.755+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-05-24T01:00:01.773+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): era5_accum> on 2026-05-24 00:00:00+00:00
+[2026-05-24T01:00:01.787+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=35122) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-24T01:00:01.791+0000] {standard_task_runner.py:63} INFO - Started process 35126 to run task
+[2026-05-24T01:00:01.790+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_ecmwf_pipeline', 'era5_accum', 'scheduled__2026-05-24T00:00:00+00:00', '--job-id', '400', '--raw', '--subdir', 'DAGS_FOLDER/era5_dag.py', '--cfg-path', '/tmp/tmprcigp1l0']
+[2026-05-24T01:00:01.795+0000] {standard_task_runner.py:91} INFO - Job 400: Subtask era5_accum
+[2026-05-24T01:00:01.883+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_ecmwf_pipeline.era5_accum scheduled__2026-05-24T00:00:00+00:00 [running]> on host fc8478f399e7
+[2026-05-24T01:00:02.027+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='era5_ecmwf_pipeline' AIRFLOW_CTX_TASK_ID='era5_accum' AIRFLOW_CTX_EXECUTION_DATE='2026-05-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-24T00:00:00+00:00'
+[2026-05-24T01:00:02.031+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-24T01:00:02.051+0000] {logging_mixin.py:188} INFO - RUN → accum | 2026-05-19
+[2026-05-24T01:00:02.063+0000] {era5_logger.py:51} INFO - Log file: logs/era5/2026/05/19/era5_20260519.log
+[2026-05-24T01:00:02.064+0000] {era5_functions.py:329} INFO - ERA5 [ACCUM] START: 2026-05-19
+[2026-05-24T01:00:03.109+0000] {era5_functions.py:285} INFO - ============================================================
+[2026-05-24T01:00:03.111+0000] {era5_functions.py:286} INFO - JOB : ACCUM | 2026-05-19
+[2026-05-24T01:00:03.114+0000] {era5_functions.py:287} INFO - VARS: ['tp']
+[2026-05-24T01:00:03.116+0000] {era5_functions.py:288} INFO - ============================================================
+[2026-05-24T01:00:03.123+0000] {era5_functions.py:53} WARNING - [VALIDATE NC] accum_20260519.nc → FAIL (ไม่พบหรือว่างเปล่า)
+[2026-05-24T01:00:03.128+0000] {era5_functions.py:138} INFO - [DOWNLOAD] 1/5 → accum_20260519.nc
+[2026-05-24T01:00:07.064+0000] {logging_mixin.py:188} WARNING - 2026-05-24 01:00:07,063 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-24T01:00:07.063+0000] {legacy_client.py:192} INFO - [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-24T01:00:07.071+0000] {logging_mixin.py:188} WARNING - 2026-05-24 01:00:07,070 INFO Request ID is 2352631c-fbfd-4bca-9759-e96cc2a2f753
+[2026-05-24T01:00:07.070+0000] {legacy_client.py:192} INFO - Request ID is 2352631c-fbfd-4bca-9759-e96cc2a2f753
+[2026-05-24T01:00:08.009+0000] {logging_mixin.py:188} WARNING - 2026-05-24 01:00:08,008 INFO status has been updated to accepted
+[2026-05-24T01:00:08.008+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-05-24T01:00:59.185+0000] {logging_mixin.py:188} WARNING - 2026-05-24 01:00:59,184 INFO status has been updated to successful
+[2026-05-24T01:00:59.184+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-05-24T01:00:59.610+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2026-05-24/14f2f96ab1952323d73d8d1d3b399569.nc
+[2026-05-24T01:01:00.330+0000] {logging_mixin.py:188} WARNING - 14f2f96ab1952323d73d8d1d3b399569.nc:   0%|          | 0.00/50.3k [00:00<?, ?B/s]
+[2026-05-24T01:01:01.702+0000] {logging_mixin.py:188} WARNING - 14f2f96ab1952323d73d8d1d3b399569.nc: 100%|##########| 50.3k/50.3k [00:01<00:00, 37.6kB/s]
+[2026-05-24T01:01:01.732+0000] {logging_mixin.py:188} WARNING -                                                                                          
+[2026-05-24T01:01:01.754+0000] {era5_functions.py:146} INFO - [DOWNLOAD] COMPLETE (58.6s)
+[2026-05-24T01:01:02.080+0000] {era5_functions.py:63} WARNING - [VALIDATE NC] accum_20260519.nc → NOT READY (2/24)
+[2026-05-24T01:01:02.085+0000] {era5_functions.py:157} WARNING - [DOWNLOAD] ERA5 not ready yet
+[2026-05-24T01:01:02.087+0000] {era5_functions.py:295} WARNING - [PIPELINE] skip tif → nc not ready
+[2026-05-24T01:01:02.089+0000] {era5_functions.py:341} INFO - ERA5 [ACCUM] COMPLETE ✓
+[2026-05-24T01:01:02.090+0000] {logging_mixin.py:188} INFO - RUN → accum | 2026-05-18
+[2026-05-24T01:01:02.097+0000] {era5_logger.py:51} INFO - Log file: logs/era5/2026/05/18/era5_20260518.log
+[2026-05-24T01:01:02.098+0000] {era5_functions.py:329} INFO - ERA5 [ACCUM] START: 2026-05-18
+[2026-05-24T01:01:03.125+0000] {era5_functions.py:285} INFO - ============================================================
+[2026-05-24T01:01:03.126+0000] {era5_functions.py:286} INFO - JOB : ACCUM | 2026-05-18
+[2026-05-24T01:01:03.127+0000] {era5_functions.py:287} INFO - VARS: ['tp']
+[2026-05-24T01:01:03.128+0000] {era5_functions.py:288} INFO - ============================================================
+[2026-05-24T01:01:03.182+0000] {era5_functions.py:63} WARNING - [VALIDATE NC] accum_20260518.nc → NOT READY (2/24)
+[2026-05-24T01:01:03.186+0000] {era5_functions.py:123} WARNING - [NC] ERA5 not ready → accum_20260518.nc
+[2026-05-24T01:01:03.187+0000] {era5_functions.py:295} WARNING - [PIPELINE] skip tif → nc not ready
+[2026-05-24T01:01:03.188+0000] {era5_functions.py:341} INFO - ERA5 [ACCUM] COMPLETE ✓
+[2026-05-24T01:01:03.188+0000] {logging_mixin.py:188} INFO - RUN → accum | 2026-05-17
+[2026-05-24T01:01:03.192+0000] {era5_logger.py:51} INFO - Log file: logs/era5/2026/05/17/era5_20260517.log
+[2026-05-24T01:01:03.193+0000] {era5_functions.py:329} INFO - ERA5 [ACCUM] START: 2026-05-17
+[2026-05-24T01:01:04.218+0000] {era5_functions.py:285} INFO - ============================================================
+[2026-05-24T01:01:04.221+0000] {era5_functions.py:286} INFO - JOB : ACCUM | 2026-05-17
+[2026-05-24T01:01:04.223+0000] {era5_functions.py:287} INFO - VARS: ['tp']
+[2026-05-24T01:01:04.226+0000] {era5_functions.py:288} INFO - ============================================================
+[2026-05-24T01:01:04.319+0000] {era5_functions.py:63} WARNING - [VALIDATE NC] accum_20260517.nc → NOT READY (4/24)
+[2026-05-24T01:01:04.325+0000] {era5_functions.py:123} WARNING - [NC] ERA5 not ready → accum_20260517.nc
+[2026-05-24T01:01:04.326+0000] {era5_functions.py:295} WARNING - [PIPELINE] skip tif → nc not ready
+[2026-05-24T01:01:04.327+0000] {era5_functions.py:341} INFO - ERA5 [ACCUM] COMPLETE ✓
+[2026-05-24T01:01:04.328+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-05-24T01:01:04.329+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-24T01:01:04.346+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=era5_ecmwf_pipeline, task_id=era5_accum, run_id=scheduled__2026-05-24T00:00:00+00:00, execution_date=20260524T000000, start_date=20260524T010001, end_date=20260524T010104
+[2026-05-24T01:01:04.386+0000] {logging_mixin.py:188} WARNING - 
+[2026-05-24T01:01:04.452+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-24T01:01:04.490+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-24T01:01:04.495+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

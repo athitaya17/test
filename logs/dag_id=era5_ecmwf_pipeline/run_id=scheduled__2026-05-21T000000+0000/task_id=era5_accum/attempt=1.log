@@ -1,0 +1,46 @@
+[2026-05-21T01:00:01.939+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-21T01:00:01.964+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_accum scheduled__2026-05-21T00:00:00+00:00 [queued]>
+[2026-05-21T01:00:01.980+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_accum scheduled__2026-05-21T00:00:00+00:00 [queued]>
+[2026-05-21T01:00:01.982+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-05-21T01:00:02.004+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): era5_accum> on 2026-05-21 00:00:00+00:00
+[2026-05-21T01:00:02.018+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=18054) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-21T01:00:02.021+0000] {standard_task_runner.py:63} INFO - Started process 18058 to run task
+[2026-05-21T01:00:02.023+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_ecmwf_pipeline', 'era5_accum', 'scheduled__2026-05-21T00:00:00+00:00', '--job-id', '232', '--raw', '--subdir', 'DAGS_FOLDER/era5_dag.py', '--cfg-path', '/tmp/tmp1v_n3cbe']
+[2026-05-21T01:00:02.028+0000] {standard_task_runner.py:91} INFO - Job 232: Subtask era5_accum
+[2026-05-21T01:00:02.103+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_ecmwf_pipeline.era5_accum scheduled__2026-05-21T00:00:00+00:00 [running]> on host 1f93ee984da8
+[2026-05-21T01:00:02.243+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='era5_ecmwf_pipeline' AIRFLOW_CTX_TASK_ID='era5_accum' AIRFLOW_CTX_EXECUTION_DATE='2026-05-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-21T00:00:00+00:00'
+[2026-05-21T01:00:02.246+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-21T01:00:02.277+0000] {era5_logger.py:51} INFO - Log file: logs/era5/2026/05/16/era5_20260516.log
+[2026-05-21T01:00:02.279+0000] {era5_functions.py:254} INFO - ERA5 [ACCUM] START: 2026-05-16
+[2026-05-21T01:00:03.303+0000] {era5_functions.py:218} INFO - ==================================================
+JOB: ACCUM | 2026-05-16
+Variables: ['tp']
+==================================================
+[2026-05-21T01:00:03.312+0000] {era5_functions.py:53} WARNING - [VALIDATE NC] accum_20260516.nc → FAIL (ไม่พบหรือว่างเปล่า)
+[2026-05-21T01:00:03.318+0000] {era5_functions.py:109} INFO - [DOWNLOAD] Attempt 1/5 → accum_20260516.nc
+[2026-05-21T01:00:04.243+0000] {logging_mixin.py:188} WARNING - 2026-05-21 01:00:04,242 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-21T01:00:04.242+0000] {legacy_client.py:192} INFO - [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-21T01:00:04.246+0000] {logging_mixin.py:188} WARNING - 2026-05-21 01:00:04,246 INFO Request ID is c4dbe875-1928-4f72-895b-3de1a9e99d28
+[2026-05-21T01:00:04.246+0000] {legacy_client.py:192} INFO - Request ID is c4dbe875-1928-4f72-895b-3de1a9e99d28
+[2026-05-21T01:00:04.463+0000] {logging_mixin.py:188} WARNING - 2026-05-21 01:00:04,463 INFO status has been updated to accepted
+[2026-05-21T01:00:04.463+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-05-21T01:00:29.446+0000] {logging_mixin.py:188} WARNING - 2026-05-21 01:00:29,444 INFO status has been updated to successful
+[2026-05-21T01:00:29.444+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-05-21T01:00:30.287+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2026-05-21/3b0ee2751912a1f9953bdef5ae333ff9.nc
+[2026-05-21T01:00:31.271+0000] {logging_mixin.py:188} WARNING - 3b0ee2751912a1f9953bdef5ae333ff9.nc:   0%|          | 0.00/53.9k [00:00<?, ?B/s]
+[2026-05-21T01:00:32.297+0000] {logging_mixin.py:188} WARNING - 3b0ee2751912a1f9953bdef5ae333ff9.nc: 100%|##########| 53.9k/53.9k [00:01<00:00, 53.9kB/s]
+[2026-05-21T01:00:32.311+0000] {logging_mixin.py:188} WARNING -                                                                                          
+[2026-05-21T01:00:32.329+0000] {era5_functions.py:119} INFO - [DOWNLOAD] COMPLETE → accum_20260516.nc (0.1 MB, 29.0s)
+[2026-05-21T01:00:32.650+0000] {era5_functions.py:62} WARNING - [VALIDATE NC] accum_20260516.nc → NOT READY (2/24 timesteps)
+[2026-05-21T01:00:32.652+0000] {era5_functions.py:127} WARNING - [DOWNLOAD] ข้อมูลยังไม่ครบ → NOT_READY
+[2026-05-21T01:00:32.653+0000] {era5_functions.py:226} WARNING - [PIPELINE] skip → ข้อมูลยังไม่ครบ
+[2026-05-21T01:00:32.654+0000] {era5_functions.py:256} INFO - ERA5 [ACCUM] COMPLETE ✓
+[2026-05-21T01:00:32.656+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-05-21T01:00:32.656+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-21T01:00:32.672+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=era5_ecmwf_pipeline, task_id=era5_accum, run_id=scheduled__2026-05-21T00:00:00+00:00, execution_date=20260521T000000, start_date=20260521T010001, end_date=20260521T010032
+[2026-05-21T01:00:32.708+0000] {logging_mixin.py:188} WARNING - 
+[2026-05-21T01:00:32.746+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-21T01:00:32.769+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-21T01:00:32.772+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

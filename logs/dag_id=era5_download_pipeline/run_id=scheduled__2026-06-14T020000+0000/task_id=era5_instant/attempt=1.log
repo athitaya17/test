@@ -1,0 +1,142 @@
+[2026-06-14T03:00:02.030+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-14T03:00:02.056+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_download_pipeline.era5_instant scheduled__2026-06-14T02:00:00+00:00 [queued]>
+[2026-06-14T03:00:02.066+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_download_pipeline.era5_instant scheduled__2026-06-14T02:00:00+00:00 [queued]>
+[2026-06-14T03:00:02.068+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-06-14T03:00:02.084+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): era5_instant> on 2026-06-14 02:00:00+00:00
+[2026-06-14T03:00:02.098+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=52209) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-14T03:00:02.102+0000] {standard_task_runner.py:63} INFO - Started process 52213 to run task
+[2026-06-14T03:00:02.105+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_download_pipeline', 'era5_instant', 'scheduled__2026-06-14T02:00:00+00:00', '--job-id', '1527', '--raw', '--subdir', 'DAGS_FOLDER/era5_dag.py', '--cfg-path', '/tmp/tmpgkddpq1x']
+[2026-06-14T03:00:02.109+0000] {standard_task_runner.py:91} INFO - Job 1527: Subtask era5_instant
+[2026-06-14T03:00:02.213+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_download_pipeline.era5_instant scheduled__2026-06-14T02:00:00+00:00 [running]> on host 01cd476fb21a
+[2026-06-14T03:00:02.340+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='era5' AIRFLOW_CTX_DAG_ID='era5_download_pipeline' AIRFLOW_CTX_TASK_ID='era5_instant' AIRFLOW_CTX_EXECUTION_DATE='2026-06-14T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-14T02:00:00+00:00'
+[2026-06-14T03:00:02.342+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-14T03:00:03.424+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:03,424 INFO [2026-06-11T00:00:00Z] Upcoming essential maintenance sessions on Data Stores underlying infrastructure on 15 June. Service disruption expected. For further details, please [visit our forum announcement](https://forum.ecmwf.int/t/upcoming-essential-maintenance-sessions-on-data-stores-underlying-infrastructure-part-2/150414).
+[2026-06-14T03:00:03.424+0000] {legacy_client.py:192} INFO - [2026-06-11T00:00:00Z] Upcoming essential maintenance sessions on Data Stores underlying infrastructure on 15 June. Service disruption expected. For further details, please [visit our forum announcement](https://forum.ecmwf.int/t/upcoming-essential-maintenance-sessions-on-data-stores-underlying-infrastructure-part-2/150414).
+[2026-06-14T03:00:03.432+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:03 [INFO] === START job=instant date=2026-06-14 ===
+[2026-06-14T03:00:03.432+0000] {era5_functions.py:368} INFO - === START job=instant date=2026-06-14 ===
+[2026-06-14T03:00:03.435+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:03 [INFO] --- job=instant date=20260614 ---
+[2026-06-14T03:00:03.435+0000] {era5_functions.py:330} INFO - --- job=instant date=20260614 ---
+[2026-06-14T03:00:04.177+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:04 [WARNING] get_cds_count failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-06-09 03:00
+[2026-06-14T03:00:04.177+0000] {era5_functions.py:131} WARNING - get_cds_count failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-06-09 03:00
+[2026-06-14T03:00:04.180+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:04 [WARNING] CDS ยังไม่มีข้อมูล job=instant date=20260614, skip
+[2026-06-14T03:00:04.180+0000] {era5_functions.py:335} WARNING - CDS ยังไม่มีข้อมูล job=instant date=20260614, skip
+[2026-06-14T03:00:04.182+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:04 [INFO] --- job=instant date=20260613 ---
+[2026-06-14T03:00:04.182+0000] {era5_functions.py:330} INFO - --- job=instant date=20260613 ---
+[2026-06-14T03:00:04.794+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:04 [WARNING] get_cds_count failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-06-09 03:00
+[2026-06-14T03:00:04.793+0000] {era5_functions.py:131} WARNING - get_cds_count failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-06-09 03:00
+[2026-06-14T03:00:04.799+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:04 [WARNING] CDS ยังไม่มีข้อมูล job=instant date=20260613, skip
+[2026-06-14T03:00:04.799+0000] {era5_functions.py:335} WARNING - CDS ยังไม่มีข้อมูล job=instant date=20260613, skip
+[2026-06-14T03:00:04.802+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:04 [INFO] --- job=instant date=20260612 ---
+[2026-06-14T03:00:04.802+0000] {era5_functions.py:330} INFO - --- job=instant date=20260612 ---
+[2026-06-14T03:00:08.062+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:08 [WARNING] get_cds_count failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-06-09 03:00
+[2026-06-14T03:00:08.061+0000] {era5_functions.py:131} WARNING - get_cds_count failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-06-09 03:00
+[2026-06-14T03:00:08.066+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:08 [WARNING] CDS ยังไม่มีข้อมูล job=instant date=20260612, skip
+[2026-06-14T03:00:08.066+0000] {era5_functions.py:335} WARNING - CDS ยังไม่มีข้อมูล job=instant date=20260612, skip
+[2026-06-14T03:00:08.070+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:08 [INFO] --- job=instant date=20260611 ---
+[2026-06-14T03:00:08.070+0000] {era5_functions.py:330} INFO - --- job=instant date=20260611 ---
+[2026-06-14T03:00:08.739+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:08 [WARNING] get_cds_count failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-06-09 03:00
+[2026-06-14T03:00:08.739+0000] {era5_functions.py:131} WARNING - get_cds_count failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-06-09 03:00
+[2026-06-14T03:00:08.745+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:08 [WARNING] CDS ยังไม่มีข้อมูล job=instant date=20260611, skip
+[2026-06-14T03:00:08.745+0000] {era5_functions.py:335} WARNING - CDS ยังไม่มีข้อมูล job=instant date=20260611, skip
+[2026-06-14T03:00:08.748+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:08 [INFO] --- job=instant date=20260610 ---
+[2026-06-14T03:00:08.748+0000] {era5_functions.py:330} INFO - --- job=instant date=20260610 ---
+[2026-06-14T03:00:09.209+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:09 [WARNING] get_cds_count failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-06-09 03:00
+[2026-06-14T03:00:09.208+0000] {era5_functions.py:131} WARNING - get_cds_count failed: 400 Client Error: Bad Request for url: https://cds.climate.copernicus.eu/api/retrieve/v1/processes/reanalysis-era5-single-levels/execution
+invalid request
+None of the data you have requested is available yet, please revise the period requested. The latest date available for this dataset is: 2026-06-09 03:00
+[2026-06-14T03:00:09.213+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:09 [WARNING] CDS ยังไม่มีข้อมูล job=instant date=20260610, skip
+[2026-06-14T03:00:09.212+0000] {era5_functions.py:335} WARNING - CDS ยังไม่มีข้อมูล job=instant date=20260610, skip
+[2026-06-14T03:00:09.215+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:09 [INFO] --- job=instant date=20260609 ---
+[2026-06-14T03:00:09.215+0000] {era5_functions.py:330} INFO - --- job=instant date=20260609 ---
+[2026-06-14T03:00:09.833+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:09,832 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-06-14T03:00:09.832+0000] {legacy_client.py:192} INFO - [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-06-14T03:00:09.835+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:09,835 INFO Request ID is 6b44fe96-da9d-4c16-b589-79d010e68ac5
+[2026-06-14T03:00:09.835+0000] {legacy_client.py:192} INFO - Request ID is 6b44fe96-da9d-4c16-b589-79d010e68ac5
+[2026-06-14T03:00:10.051+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:10,051 INFO status has been updated to accepted
+[2026-06-14T03:00:10.051+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-06-14T03:00:32.677+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:32,677 INFO status has been updated to running
+[2026-06-14T03:00:32.677+0000] {legacy_client.py:192} INFO - status has been updated to running
+[2026-06-14T03:00:44.286+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:44,285 INFO status has been updated to successful
+[2026-06-14T03:00:44.285+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-06-14T03:00:44.734+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2026-06-14/d815a3d8c3af8b999ea67de756805c6e.nc
+[2026-06-14T03:00:45.749+0000] {logging_mixin.py:188} WARNING - d815a3d8c3af8b999ea67de756805c6e.nc:   0%|          | 0.00/506k [00:00<?, ?B/s]
+[2026-06-14T03:00:47.717+0000] {logging_mixin.py:188} WARNING - d815a3d8c3af8b999ea67de756805c6e.nc: 100%|##########| 506k/506k [00:01<00:00, 264kB/s]
+[2026-06-14T03:00:47.721+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-06-14T03:00:48.006+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:48 [INFO] CDS timestep available: 4
+[2026-06-14T03:00:48.006+0000] {era5_functions.py:128} INFO - CDS timestep available: 4
+[2026-06-14T03:00:48.089+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:48 [INFO] local timestep: 3 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/09/instant_20260609.nc
+[2026-06-14T03:00:48.089+0000] {era5_functions.py:152} INFO - local timestep: 3 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/09/instant_20260609.nc
+[2026-06-14T03:00:48.097+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:48 [INFO] nc outdated (local=3 < cds=4), removing: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/09/instant_20260609.nc
+[2026-06-14T03:00:48.097+0000] {era5_functions.py:193} INFO - nc outdated (local=3 < cds=4), removing: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/09/instant_20260609.nc
+[2026-06-14T03:00:48.122+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:48 [INFO] download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/09/instant_20260609.nc
+[2026-06-14T03:00:48.122+0000] {era5_functions.py:200} INFO - download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/09/instant_20260609.nc
+[2026-06-14T03:00:49.045+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:49,044 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-06-14T03:00:49.044+0000] {legacy_client.py:192} INFO - [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-06-14T03:00:49.048+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:49,048 INFO Request ID is 45017fcf-8272-4276-8f25-5fd63b5b7193
+[2026-06-14T03:00:49.048+0000] {legacy_client.py:192} INFO - Request ID is 45017fcf-8272-4276-8f25-5fd63b5b7193
+[2026-06-14T03:00:49.269+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:00:49,269 INFO status has been updated to accepted
+[2026-06-14T03:00:49.269+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-06-14T03:01:04.951+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:04,951 INFO status has been updated to running
+[2026-06-14T03:01:04.951+0000] {legacy_client.py:192} INFO - status has been updated to running
+[2026-06-14T03:01:12.773+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:12,773 INFO status has been updated to successful
+[2026-06-14T03:01:12.773+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-06-14T03:01:13.222+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2026-06-14/5c439c03c603fec4603e732eccd06fae.nc
+[2026-06-14T03:01:14.276+0000] {logging_mixin.py:188} WARNING - 5c439c03c603fec4603e732eccd06fae.nc:   0%|          | 0.00/506k [00:00<?, ?B/s]
+[2026-06-14T03:01:15.941+0000] {logging_mixin.py:188} WARNING - 5c439c03c603fec4603e732eccd06fae.nc: 100%|##########| 506k/506k [00:01<00:00, 312kB/s]
+[2026-06-14T03:01:15.959+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-06-14T03:01:16.075+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/09/instant_20260609.nc
+[2026-06-14T03:01:16.074+0000] {era5_functions.py:204} INFO - nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/09/instant_20260609.nc
+[2026-06-14T03:01:16.166+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] local timestep: 4 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/09/instant_20260609.nc
+[2026-06-14T03:01:16.166+0000] {era5_functions.py:152} INFO - local timestep: 4 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/09/instant_20260609.nc
+[2026-06-14T03:01:16.263+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] tif outdated (tif=3 < nc=4), removing: /opt/***/era5/ecmwf/data/tif/2026/06/09/t2m_20260609.tif
+[2026-06-14T03:01:16.263+0000] {era5_functions.py:261} INFO - tif outdated (tif=3 < nc=4), removing: /opt/***/era5/ecmwf/data/tif/2026/06/09/t2m_20260609.tif
+[2026-06-14T03:01:16.347+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] tif ok (bands=4): /opt/***/era5/ecmwf/data/tif/2026/06/09/t2m_20260609.tif
+[2026-06-14T03:01:16.347+0000] {era5_functions.py:304} INFO - tif ok (bands=4): /opt/***/era5/ecmwf/data/tif/2026/06/09/t2m_20260609.tif
+[2026-06-14T03:01:16.368+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] tif outdated (tif=3 < nc=4), removing: /opt/***/era5/ecmwf/data/tif/2026/06/09/d2m_20260609.tif
+[2026-06-14T03:01:16.368+0000] {era5_functions.py:261} INFO - tif outdated (tif=3 < nc=4), removing: /opt/***/era5/ecmwf/data/tif/2026/06/09/d2m_20260609.tif
+[2026-06-14T03:01:16.449+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] tif ok (bands=4): /opt/***/era5/ecmwf/data/tif/2026/06/09/d2m_20260609.tif
+[2026-06-14T03:01:16.448+0000] {era5_functions.py:304} INFO - tif ok (bands=4): /opt/***/era5/ecmwf/data/tif/2026/06/09/d2m_20260609.tif
+[2026-06-14T03:01:16.466+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] tif outdated (tif=3 < nc=4), removing: /opt/***/era5/ecmwf/data/tif/2026/06/09/sp_20260609.tif
+[2026-06-14T03:01:16.466+0000] {era5_functions.py:261} INFO - tif outdated (tif=3 < nc=4), removing: /opt/***/era5/ecmwf/data/tif/2026/06/09/sp_20260609.tif
+[2026-06-14T03:01:16.541+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] tif ok (bands=4): /opt/***/era5/ecmwf/data/tif/2026/06/09/sp_20260609.tif
+[2026-06-14T03:01:16.541+0000] {era5_functions.py:304} INFO - tif ok (bands=4): /opt/***/era5/ecmwf/data/tif/2026/06/09/sp_20260609.tif
+[2026-06-14T03:01:16.559+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] tif outdated (tif=3 < nc=4), removing: /opt/***/era5/ecmwf/data/tif/2026/06/09/blh_20260609.tif
+[2026-06-14T03:01:16.559+0000] {era5_functions.py:261} INFO - tif outdated (tif=3 < nc=4), removing: /opt/***/era5/ecmwf/data/tif/2026/06/09/blh_20260609.tif
+[2026-06-14T03:01:16.644+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] tif ok (bands=4): /opt/***/era5/ecmwf/data/tif/2026/06/09/blh_20260609.tif
+[2026-06-14T03:01:16.643+0000] {era5_functions.py:304} INFO - tif ok (bands=4): /opt/***/era5/ecmwf/data/tif/2026/06/09/blh_20260609.tif
+[2026-06-14T03:01:16.664+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] tif outdated (tif=3 < nc=4), removing: /opt/***/era5/ecmwf/data/tif/2026/06/09/u10_20260609.tif
+[2026-06-14T03:01:16.664+0000] {era5_functions.py:261} INFO - tif outdated (tif=3 < nc=4), removing: /opt/***/era5/ecmwf/data/tif/2026/06/09/u10_20260609.tif
+[2026-06-14T03:01:16.748+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] tif ok (bands=4): /opt/***/era5/ecmwf/data/tif/2026/06/09/u10_20260609.tif
+[2026-06-14T03:01:16.748+0000] {era5_functions.py:304} INFO - tif ok (bands=4): /opt/***/era5/ecmwf/data/tif/2026/06/09/u10_20260609.tif
+[2026-06-14T03:01:16.765+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] tif outdated (tif=3 < nc=4), removing: /opt/***/era5/ecmwf/data/tif/2026/06/09/v10_20260609.tif
+[2026-06-14T03:01:16.764+0000] {era5_functions.py:261} INFO - tif outdated (tif=3 < nc=4), removing: /opt/***/era5/ecmwf/data/tif/2026/06/09/v10_20260609.tif
+[2026-06-14T03:01:16.841+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] tif ok (bands=4): /opt/***/era5/ecmwf/data/tif/2026/06/09/v10_20260609.tif
+[2026-06-14T03:01:16.841+0000] {era5_functions.py:304} INFO - tif ok (bands=4): /opt/***/era5/ecmwf/data/tif/2026/06/09/v10_20260609.tif
+[2026-06-14T03:01:16.847+0000] {logging_mixin.py:188} WARNING - 2026-06-14 03:01:16 [INFO] === END job=instant date=2026-06-14 ===
+[2026-06-14T03:01:16.847+0000] {era5_functions.py:379} INFO - === END job=instant date=2026-06-14 ===
+[2026-06-14T03:01:16.849+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-06-14T03:01:16.849+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-14T03:01:16.861+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=era5_download_pipeline, task_id=era5_instant, run_id=scheduled__2026-06-14T02:00:00+00:00, execution_date=20260614T020000, start_date=20260614T030002, end_date=20260614T030116
+[2026-06-14T03:01:16.926+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-14T03:01:16.955+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-14T03:01:16.959+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

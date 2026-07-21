@@ -1,0 +1,235 @@
+[2026-05-11T07:33:38.238+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-11T07:33:38.274+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_ecmwf_download.download_era5 manual__2026-05-11T07:33:36.669236+00:00 [queued]>
+[2026-05-11T07:33:38.289+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_ecmwf_download.download_era5 manual__2026-05-11T07:33:36.669236+00:00 [queued]>
+[2026-05-11T07:33:38.291+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-05-11T07:33:38.312+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): download_era5> on 2026-05-11 07:33:36.669236+00:00
+[2026-05-11T07:33:38.321+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=75) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-11T07:33:38.324+0000] {standard_task_runner.py:63} INFO - Started process 77 to run task
+[2026-05-11T07:33:38.324+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_ecmwf_download', 'download_era5', 'manual__2026-05-11T07:33:36.669236+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/era5_ecmwf.py', '--cfg-path', '/tmp/tmp890825q7']
+[2026-05-11T07:33:38.326+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask download_era5
+[2026-05-11T07:33:38.409+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_ecmwf_download.download_era5 manual__2026-05-11T07:33:36.669236+00:00 [running]> on host dddd3b50818c
+[2026-05-11T07:33:38.512+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='era5_ecmwf_download' AIRFLOW_CTX_TASK_ID='download_era5' AIRFLOW_CTX_EXECUTION_DATE='2026-05-11T07:33:36.669236+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-11T07:33:36.669236+00:00'
+[2026-05-11T07:33:38.514+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-11T07:33:38.550+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-11T07:33:38.552+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/scripts/download_era5.py']
+[2026-05-11T07:33:38.569+0000] {subprocess.py:86} INFO - Output:
+[2026-05-11T07:33:40.095+0000] {subprocess.py:93} INFO - /opt/***/scripts/download_era5.py:10: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[2026-05-11T07:33:40.097+0000] {subprocess.py:93} INFO -   DATE = datetime.utcnow() - timedelta(days=7)
+[2026-05-11T07:33:41.917+0000] {subprocess.py:93} INFO - 2026-05-11 07:33:41,917 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-11T07:33:41.919+0000] {subprocess.py:93} INFO - 2026-05-11 07:33:41,917 INFO Request ID is 2e57a122-b44b-4f4b-9541-da6d95fcbcc7
+[2026-05-11T07:33:42.156+0000] {subprocess.py:93} INFO - 2026-05-11 07:33:42,155 INFO status has been updated to accepted
+[2026-05-11T07:34:16.457+0000] {subprocess.py:93} INFO - 2026-05-11 07:34:16,456 INFO status has been updated to successful
+[2026-05-11T07:34:17.586+0000] {subprocess.py:93} INFO - instant (1/5)
+[2026-05-11T07:34:17.587+0000] {subprocess.py:93} INFO - START DOWNLOAD
+[2026-05-11T07:34:37.745+0000] {subprocess.py:93} INFO - 5fddb13ffc7c19cc33fa6c8e6c547d7e.nc:   0%|          | 0.00/2.57M [00:00<?, ?B/s]5fddb13ffc7c19cc33fa6c8e6c547d7e.nc:  39%|███▉      | 1.00M/2.57M [00:01<00:02, 589kB/s]5fddb13ffc7c19cc33fa6c8e6c547d7e.nc:  78%|███████▊  | 2.00M/2.57M [00:01<00:00, 1.25MB/s]5fddb13ffc7c19cc33fa6c8e6c547d7e.nc: 100%|██████████| 2.57M/2.57M [00:03<00:00, 679kB/s]                                                                                         DOWNLOAD COMPLETE
+[2026-05-11T07:34:37.746+0000] {subprocess.py:93} INFO - OPEN DATASET
+[2026-05-11T07:34:37.747+0000] {subprocess.py:93} INFO - 24/24 timesteps
+[2026-05-11T07:34:37.747+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/00/2m_temperature_20260504_00.nc
+[2026-05-11T07:34:37.748+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/01/2m_temperature_20260504_01.nc
+[2026-05-11T07:34:37.748+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/02/2m_temperature_20260504_02.nc
+[2026-05-11T07:34:37.749+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/03/2m_temperature_20260504_03.nc
+[2026-05-11T07:34:37.749+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/04/2m_temperature_20260504_04.nc
+[2026-05-11T07:34:37.749+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/05/2m_temperature_20260504_05.nc
+[2026-05-11T07:34:37.750+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/06/2m_temperature_20260504_06.nc
+[2026-05-11T07:34:37.750+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/07/2m_temperature_20260504_07.nc
+[2026-05-11T07:34:37.751+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/08/2m_temperature_20260504_08.nc
+[2026-05-11T07:34:37.751+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/09/2m_temperature_20260504_09.nc
+[2026-05-11T07:34:37.752+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/10/2m_temperature_20260504_10.nc
+[2026-05-11T07:34:37.752+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/11/2m_temperature_20260504_11.nc
+[2026-05-11T07:34:37.752+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/12/2m_temperature_20260504_12.nc
+[2026-05-11T07:34:37.753+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/13/2m_temperature_20260504_13.nc
+[2026-05-11T07:34:37.754+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/14/2m_temperature_20260504_14.nc
+[2026-05-11T07:34:37.754+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/15/2m_temperature_20260504_15.nc
+[2026-05-11T07:34:37.755+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/16/2m_temperature_20260504_16.nc
+[2026-05-11T07:34:37.755+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/17/2m_temperature_20260504_17.nc
+[2026-05-11T07:34:37.755+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/18/2m_temperature_20260504_18.nc
+[2026-05-11T07:34:37.756+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/19/2m_temperature_20260504_19.nc
+[2026-05-11T07:34:37.756+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/20/2m_temperature_20260504_20.nc
+[2026-05-11T07:34:37.757+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/21/2m_temperature_20260504_21.nc
+[2026-05-11T07:34:37.758+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/22/2m_temperature_20260504_22.nc
+[2026-05-11T07:34:37.758+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_temperature/2026/05/04/23/2m_temperature_20260504_23.nc
+[2026-05-11T07:34:37.759+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/00/2m_dewpoint_temperature_20260504_00.nc
+[2026-05-11T07:34:37.759+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/01/2m_dewpoint_temperature_20260504_01.nc
+[2026-05-11T07:34:37.760+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/02/2m_dewpoint_temperature_20260504_02.nc
+[2026-05-11T07:34:37.760+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/03/2m_dewpoint_temperature_20260504_03.nc
+[2026-05-11T07:34:37.761+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/04/2m_dewpoint_temperature_20260504_04.nc
+[2026-05-11T07:34:37.761+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/05/2m_dewpoint_temperature_20260504_05.nc
+[2026-05-11T07:34:37.762+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/06/2m_dewpoint_temperature_20260504_06.nc
+[2026-05-11T07:34:37.762+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/07/2m_dewpoint_temperature_20260504_07.nc
+[2026-05-11T07:34:37.763+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/08/2m_dewpoint_temperature_20260504_08.nc
+[2026-05-11T07:34:37.763+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/09/2m_dewpoint_temperature_20260504_09.nc
+[2026-05-11T07:34:37.764+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/10/2m_dewpoint_temperature_20260504_10.nc
+[2026-05-11T07:34:37.764+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/11/2m_dewpoint_temperature_20260504_11.nc
+[2026-05-11T07:34:37.765+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/12/2m_dewpoint_temperature_20260504_12.nc
+[2026-05-11T07:34:37.765+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/13/2m_dewpoint_temperature_20260504_13.nc
+[2026-05-11T07:34:37.765+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/14/2m_dewpoint_temperature_20260504_14.nc
+[2026-05-11T07:34:37.766+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/15/2m_dewpoint_temperature_20260504_15.nc
+[2026-05-11T07:34:37.766+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/16/2m_dewpoint_temperature_20260504_16.nc
+[2026-05-11T07:34:37.767+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/17/2m_dewpoint_temperature_20260504_17.nc
+[2026-05-11T07:34:37.767+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/18/2m_dewpoint_temperature_20260504_18.nc
+[2026-05-11T07:34:37.768+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/19/2m_dewpoint_temperature_20260504_19.nc
+[2026-05-11T07:34:37.768+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/20/2m_dewpoint_temperature_20260504_20.nc
+[2026-05-11T07:34:37.769+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/21/2m_dewpoint_temperature_20260504_21.nc
+[2026-05-11T07:34:37.769+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/22/2m_dewpoint_temperature_20260504_22.nc
+[2026-05-11T07:34:37.770+0000] {subprocess.py:93} INFO - /opt/***/data/nc/2m_dewpoint_temperature/2026/05/04/23/2m_dewpoint_temperature_20260504_23.nc
+[2026-05-11T07:34:37.770+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/00/surface_pressure_20260504_00.nc
+[2026-05-11T07:34:37.771+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/01/surface_pressure_20260504_01.nc
+[2026-05-11T07:34:37.771+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/02/surface_pressure_20260504_02.nc
+[2026-05-11T07:34:37.772+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/03/surface_pressure_20260504_03.nc
+[2026-05-11T07:34:37.773+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/04/surface_pressure_20260504_04.nc
+[2026-05-11T07:34:37.774+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/05/surface_pressure_20260504_05.nc
+[2026-05-11T07:34:37.774+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/06/surface_pressure_20260504_06.nc
+[2026-05-11T07:34:37.775+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/07/surface_pressure_20260504_07.nc
+[2026-05-11T07:34:37.775+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/08/surface_pressure_20260504_08.nc
+[2026-05-11T07:34:37.776+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/09/surface_pressure_20260504_09.nc
+[2026-05-11T07:34:37.776+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/10/surface_pressure_20260504_10.nc
+[2026-05-11T07:34:37.777+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/11/surface_pressure_20260504_11.nc
+[2026-05-11T07:34:37.777+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/12/surface_pressure_20260504_12.nc
+[2026-05-11T07:34:37.778+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/13/surface_pressure_20260504_13.nc
+[2026-05-11T07:34:37.778+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/14/surface_pressure_20260504_14.nc
+[2026-05-11T07:34:37.779+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/15/surface_pressure_20260504_15.nc
+[2026-05-11T07:34:37.779+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/16/surface_pressure_20260504_16.nc
+[2026-05-11T07:34:37.780+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/17/surface_pressure_20260504_17.nc
+[2026-05-11T07:34:37.780+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/18/surface_pressure_20260504_18.nc
+[2026-05-11T07:34:37.781+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/19/surface_pressure_20260504_19.nc
+[2026-05-11T07:34:37.781+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/20/surface_pressure_20260504_20.nc
+[2026-05-11T07:34:37.781+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/21/surface_pressure_20260504_21.nc
+[2026-05-11T07:34:37.782+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/22/surface_pressure_20260504_22.nc
+[2026-05-11T07:34:37.782+0000] {subprocess.py:93} INFO - /opt/***/data/nc/surface_pressure/2026/05/04/23/surface_pressure_20260504_23.nc
+[2026-05-11T07:34:37.783+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/00/boundary_layer_height_20260504_00.nc
+[2026-05-11T07:34:37.783+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/01/boundary_layer_height_20260504_01.nc
+[2026-05-11T07:34:37.784+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/02/boundary_layer_height_20260504_02.nc
+[2026-05-11T07:34:37.785+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/03/boundary_layer_height_20260504_03.nc
+[2026-05-11T07:34:37.785+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/04/boundary_layer_height_20260504_04.nc
+[2026-05-11T07:34:37.786+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/05/boundary_layer_height_20260504_05.nc
+[2026-05-11T07:34:37.786+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/06/boundary_layer_height_20260504_06.nc
+[2026-05-11T07:34:37.787+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/07/boundary_layer_height_20260504_07.nc
+[2026-05-11T07:34:37.788+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/08/boundary_layer_height_20260504_08.nc
+[2026-05-11T07:34:37.789+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/09/boundary_layer_height_20260504_09.nc
+[2026-05-11T07:34:37.789+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/10/boundary_layer_height_20260504_10.nc
+[2026-05-11T07:34:37.789+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/11/boundary_layer_height_20260504_11.nc
+[2026-05-11T07:34:37.790+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/12/boundary_layer_height_20260504_12.nc
+[2026-05-11T07:34:37.790+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/13/boundary_layer_height_20260504_13.nc
+[2026-05-11T07:34:37.791+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/14/boundary_layer_height_20260504_14.nc
+[2026-05-11T07:34:37.791+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/15/boundary_layer_height_20260504_15.nc
+[2026-05-11T07:34:37.792+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/16/boundary_layer_height_20260504_16.nc
+[2026-05-11T07:34:37.792+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/17/boundary_layer_height_20260504_17.nc
+[2026-05-11T07:34:37.792+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/18/boundary_layer_height_20260504_18.nc
+[2026-05-11T07:34:41.908+0000] {subprocess.py:93} INFO - 2026-05-11 07:34:41,908 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-11T07:34:41.910+0000] {subprocess.py:93} INFO - 2026-05-11 07:34:41,908 INFO Request ID is e377680a-8cef-45b5-915c-f76c26831a8e
+[2026-05-11T07:34:42.114+0000] {subprocess.py:93} INFO - 2026-05-11 07:34:42,114 INFO status has been updated to accepted
+[2026-05-11T07:34:56.594+0000] {subprocess.py:93} INFO - 2026-05-11 07:34:56,593 INFO status has been updated to running
+[2026-05-11T07:35:04.389+0000] {subprocess.py:93} INFO - 2026-05-11 07:35:04,389 INFO status has been updated to successful
+[2026-05-11T07:35:05.536+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/19/boundary_layer_height_20260504_19.nc
+[2026-05-11T07:35:05.536+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/20/boundary_layer_height_20260504_20.nc
+[2026-05-11T07:35:05.537+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/21/boundary_layer_height_20260504_21.nc
+[2026-05-11T07:35:05.538+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/22/boundary_layer_height_20260504_22.nc
+[2026-05-11T07:35:05.539+0000] {subprocess.py:93} INFO - /opt/***/data/nc/boundary_layer_height/2026/05/04/23/boundary_layer_height_20260504_23.nc
+[2026-05-11T07:35:05.539+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/00/10m_u_component_of_wind_20260504_00.nc
+[2026-05-11T07:35:05.540+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/01/10m_u_component_of_wind_20260504_01.nc
+[2026-05-11T07:35:05.541+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/02/10m_u_component_of_wind_20260504_02.nc
+[2026-05-11T07:35:05.541+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/03/10m_u_component_of_wind_20260504_03.nc
+[2026-05-11T07:35:05.542+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/04/10m_u_component_of_wind_20260504_04.nc
+[2026-05-11T07:35:05.543+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/05/10m_u_component_of_wind_20260504_05.nc
+[2026-05-11T07:35:05.544+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/06/10m_u_component_of_wind_20260504_06.nc
+[2026-05-11T07:35:05.545+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/07/10m_u_component_of_wind_20260504_07.nc
+[2026-05-11T07:35:05.545+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/08/10m_u_component_of_wind_20260504_08.nc
+[2026-05-11T07:35:05.545+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/09/10m_u_component_of_wind_20260504_09.nc
+[2026-05-11T07:35:05.546+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/10/10m_u_component_of_wind_20260504_10.nc
+[2026-05-11T07:35:05.546+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/11/10m_u_component_of_wind_20260504_11.nc
+[2026-05-11T07:35:05.546+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/12/10m_u_component_of_wind_20260504_12.nc
+[2026-05-11T07:35:05.547+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/13/10m_u_component_of_wind_20260504_13.nc
+[2026-05-11T07:35:05.547+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/14/10m_u_component_of_wind_20260504_14.nc
+[2026-05-11T07:35:05.547+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/15/10m_u_component_of_wind_20260504_15.nc
+[2026-05-11T07:35:05.548+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/16/10m_u_component_of_wind_20260504_16.nc
+[2026-05-11T07:35:05.549+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/17/10m_u_component_of_wind_20260504_17.nc
+[2026-05-11T07:35:05.550+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/18/10m_u_component_of_wind_20260504_18.nc
+[2026-05-11T07:35:05.551+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/19/10m_u_component_of_wind_20260504_19.nc
+[2026-05-11T07:35:05.552+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/20/10m_u_component_of_wind_20260504_20.nc
+[2026-05-11T07:35:05.553+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/21/10m_u_component_of_wind_20260504_21.nc
+[2026-05-11T07:35:05.554+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/22/10m_u_component_of_wind_20260504_22.nc
+[2026-05-11T07:35:05.555+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_u_component_of_wind/2026/05/04/23/10m_u_component_of_wind_20260504_23.nc
+[2026-05-11T07:35:05.555+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/00/10m_v_component_of_wind_20260504_00.nc
+[2026-05-11T07:35:05.556+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/01/10m_v_component_of_wind_20260504_01.nc
+[2026-05-11T07:35:05.557+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/02/10m_v_component_of_wind_20260504_02.nc
+[2026-05-11T07:35:05.558+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/03/10m_v_component_of_wind_20260504_03.nc
+[2026-05-11T07:35:05.559+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/04/10m_v_component_of_wind_20260504_04.nc
+[2026-05-11T07:35:05.560+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/05/10m_v_component_of_wind_20260504_05.nc
+[2026-05-11T07:35:05.560+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/06/10m_v_component_of_wind_20260504_06.nc
+[2026-05-11T07:35:05.561+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/07/10m_v_component_of_wind_20260504_07.nc
+[2026-05-11T07:35:05.562+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/08/10m_v_component_of_wind_20260504_08.nc
+[2026-05-11T07:35:05.563+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/09/10m_v_component_of_wind_20260504_09.nc
+[2026-05-11T07:35:05.564+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/10/10m_v_component_of_wind_20260504_10.nc
+[2026-05-11T07:35:05.566+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/11/10m_v_component_of_wind_20260504_11.nc
+[2026-05-11T07:35:05.566+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/12/10m_v_component_of_wind_20260504_12.nc
+[2026-05-11T07:35:05.567+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/13/10m_v_component_of_wind_20260504_13.nc
+[2026-05-11T07:35:05.567+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/14/10m_v_component_of_wind_20260504_14.nc
+[2026-05-11T07:35:05.568+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/15/10m_v_component_of_wind_20260504_15.nc
+[2026-05-11T07:35:05.568+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/16/10m_v_component_of_wind_20260504_16.nc
+[2026-05-11T07:35:05.569+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/17/10m_v_component_of_wind_20260504_17.nc
+[2026-05-11T07:35:05.569+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/18/10m_v_component_of_wind_20260504_18.nc
+[2026-05-11T07:35:05.570+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/19/10m_v_component_of_wind_20260504_19.nc
+[2026-05-11T07:35:05.571+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/20/10m_v_component_of_wind_20260504_20.nc
+[2026-05-11T07:35:05.571+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/21/10m_v_component_of_wind_20260504_21.nc
+[2026-05-11T07:35:05.572+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/22/10m_v_component_of_wind_20260504_22.nc
+[2026-05-11T07:35:05.572+0000] {subprocess.py:93} INFO - /opt/***/data/nc/10m_v_component_of_wind/2026/05/04/23/10m_v_component_of_wind_20260504_23.nc
+[2026-05-11T07:35:05.573+0000] {subprocess.py:93} INFO - instant done
+[2026-05-11T07:35:05.574+0000] {subprocess.py:93} INFO - accum (1/5)
+[2026-05-11T07:35:05.575+0000] {subprocess.py:93} INFO - START DOWNLOAD
+[2026-05-11T07:35:18.507+0000] {subprocess.py:93} INFO - 4d7fb15d3629bf9dbde6c742dd44fc1f.nc:   0%|          | 0.00/305k [00:00<?, ?B/s]4d7fb15d3629bf9dbde6c742dd44fc1f.nc: 100%|██████████| 305k/305k [00:01<00:00, 183kB/s]                                                                                      DOWNLOAD COMPLETE
+[2026-05-11T07:35:18.508+0000] {subprocess.py:93} INFO - OPEN DATASET
+[2026-05-11T07:35:18.509+0000] {subprocess.py:93} INFO - 24/24 timesteps
+[2026-05-11T07:35:18.509+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/00/total_precipitation_20260504_00.nc
+[2026-05-11T07:35:18.510+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/01/total_precipitation_20260504_01.nc
+[2026-05-11T07:35:18.510+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/02/total_precipitation_20260504_02.nc
+[2026-05-11T07:35:18.511+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/03/total_precipitation_20260504_03.nc
+[2026-05-11T07:35:18.511+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/04/total_precipitation_20260504_04.nc
+[2026-05-11T07:35:18.512+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/05/total_precipitation_20260504_05.nc
+[2026-05-11T07:35:18.512+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/06/total_precipitation_20260504_06.nc
+[2026-05-11T07:35:18.513+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/07/total_precipitation_20260504_07.nc
+[2026-05-11T07:35:18.513+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/08/total_precipitation_20260504_08.nc
+[2026-05-11T07:35:18.514+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/09/total_precipitation_20260504_09.nc
+[2026-05-11T07:35:18.514+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/10/total_precipitation_20260504_10.nc
+[2026-05-11T07:35:18.514+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/11/total_precipitation_20260504_11.nc
+[2026-05-11T07:35:18.515+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/12/total_precipitation_20260504_12.nc
+[2026-05-11T07:35:18.515+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/13/total_precipitation_20260504_13.nc
+[2026-05-11T07:35:18.515+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/14/total_precipitation_20260504_14.nc
+[2026-05-11T07:35:18.516+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/15/total_precipitation_20260504_15.nc
+[2026-05-11T07:35:18.516+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/16/total_precipitation_20260504_16.nc
+[2026-05-11T07:35:18.517+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/17/total_precipitation_20260504_17.nc
+[2026-05-11T07:35:18.517+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/18/total_precipitation_20260504_18.nc
+[2026-05-11T07:35:18.518+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/19/total_precipitation_20260504_19.nc
+[2026-05-11T07:35:18.518+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/20/total_precipitation_20260504_20.nc
+[2026-05-11T07:35:18.518+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/21/total_precipitation_20260504_21.nc
+[2026-05-11T07:35:18.519+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/22/total_precipitation_20260504_22.nc
+[2026-05-11T07:35:18.519+0000] {subprocess.py:93} INFO - /opt/***/data/nc/total_precipitation/2026/05/04/23/total_precipitation_20260504_23.nc
+[2026-05-11T07:35:18.519+0000] {subprocess.py:93} INFO - accum done
+[2026-05-11T07:35:18.520+0000] {subprocess.py:93} INFO - /opt/***/data/nc
+[2026-05-11T07:35:18.520+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-05-11T07:35:18.520+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/download_era5.py", line 237, in <module>
+[2026-05-11T07:35:18.521+0000] {subprocess.py:93} INFO -     main()
+[2026-05-11T07:35:18.521+0000] {subprocess.py:93} INFO -     ^^^^
+[2026-05-11T07:35:18.522+0000] {subprocess.py:93} INFO - NameError: name 'main' is not defined. Did you mean: 'min'?
+[2026-05-11T07:35:18.619+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-05-11T07:35:18.620+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-11T07:35:18.631+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-05-11T07:35:18.635+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=era5_ecmwf_download, task_id=download_era5, run_id=manual__2026-05-11T07:33:36.669236+00:00, execution_date=20260511T073336, start_date=20260511T073338, end_date=20260511T073518
+[2026-05-11T07:35:18.650+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 4 for task download_era5 (Bash command failed. The command returned a non-zero exit code 1.; 77)
+[2026-05-11T07:35:18.700+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-05-11T07:35:18.716+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-11T07:35:18.719+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

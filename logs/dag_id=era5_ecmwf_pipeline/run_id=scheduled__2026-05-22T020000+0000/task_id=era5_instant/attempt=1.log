@@ -1,0 +1,96 @@
+[2026-05-22T03:00:02.844+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-22T03:00:02.873+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_instant scheduled__2026-05-22T02:00:00+00:00 [queued]>
+[2026-05-22T03:00:02.883+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_instant scheduled__2026-05-22T02:00:00+00:00 [queued]>
+[2026-05-22T03:00:02.884+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-05-22T03:00:02.900+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): era5_instant> on 2026-05-22 02:00:00+00:00
+[2026-05-22T03:00:02.914+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=104) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-22T03:00:02.918+0000] {standard_task_runner.py:63} INFO - Started process 107 to run task
+[2026-05-22T03:00:02.917+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_ecmwf_pipeline', 'era5_instant', 'scheduled__2026-05-22T02:00:00+00:00', '--job-id', '289', '--raw', '--subdir', 'DAGS_FOLDER/era5_dag.py', '--cfg-path', '/tmp/tmpl5akdyo8']
+[2026-05-22T03:00:02.922+0000] {standard_task_runner.py:91} INFO - Job 289: Subtask era5_instant
+[2026-05-22T03:00:03.031+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_ecmwf_pipeline.era5_instant scheduled__2026-05-22T02:00:00+00:00 [running]> on host 965f80708536
+[2026-05-22T03:00:03.186+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='era5_ecmwf_pipeline' AIRFLOW_CTX_TASK_ID='era5_instant' AIRFLOW_CTX_EXECUTION_DATE='2026-05-22T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-22T02:00:00+00:00'
+[2026-05-22T03:00:03.192+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-22T03:00:03.235+0000] {era5_logger.py:51} INFO - Log file: logs/era5/2026/05/17/era5_20260517.log
+[2026-05-22T03:00:03.237+0000] {era5_functions.py:301} INFO - ERA5 [INSTANT] START: 2026-05-17
+[2026-05-22T03:00:04.277+0000] {era5_functions.py:264} INFO - ============================================================
+[2026-05-22T03:00:04.279+0000] {era5_functions.py:265} INFO - JOB : INSTANT | 2026-05-17
+[2026-05-22T03:00:04.281+0000] {era5_functions.py:266} INFO - VARS: ['t2m', 'd2m', 'sp', 'blh', 'u10', 'v10']
+[2026-05-22T03:00:04.282+0000] {era5_functions.py:267} INFO - ============================================================
+[2026-05-22T03:00:04.730+0000] {era5_functions.py:63} WARNING - [VALIDATE NC] instant_20260517.nc → NOT READY (2/24)
+[2026-05-22T03:00:04.746+0000] {era5_functions.py:123} INFO - [DOWNLOAD] 1/5 → instant_20260517.nc
+[2026-05-22T03:00:05.525+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:00:05,524 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-22T03:00:05.524+0000] {legacy_client.py:192} INFO - [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-22T03:00:05.529+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:00:05,528 INFO Request ID is 5eab9c7e-d200-4e16-9709-f72761d41859
+[2026-05-22T03:00:05.528+0000] {legacy_client.py:192} INFO - Request ID is 5eab9c7e-d200-4e16-9709-f72761d41859
+[2026-05-22T03:00:05.754+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:00:05,754 INFO status has been updated to accepted
+[2026-05-22T03:00:05.754+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-05-22T03:00:42.368+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:00:42,368 INFO status has been updated to successful
+[2026-05-22T03:00:42.368+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-05-22T03:00:42.792+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2026-05-22/96689ae706a752366350898b1c84f109.nc
+[2026-05-22T03:00:43.769+0000] {logging_mixin.py:188} WARNING - 96689ae706a752366350898b1c84f109.nc:   0%|          | 0.00/507k [00:00<?, ?B/s]
+[2026-05-22T03:00:45.642+0000] {logging_mixin.py:188} WARNING - 96689ae706a752366350898b1c84f109.nc: 100%|##########| 507k/507k [00:01<00:00, 277kB/s]
+[2026-05-22T03:00:45.659+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-05-22T03:00:45.675+0000] {era5_functions.py:131} INFO - [DOWNLOAD] COMPLETE (40.9s)
+[2026-05-22T03:00:45.759+0000] {era5_functions.py:63} WARNING - [VALIDATE NC] instant_20260517.nc → NOT READY (4/24)
+[2026-05-22T03:00:45.763+0000] {era5_functions.py:143} WARNING - [DOWNLOAD] FAILED (1/5) → invalid nc
+[2026-05-22T03:01:45.770+0000] {era5_functions.py:123} INFO - [DOWNLOAD] 2/5 → instant_20260517.nc
+[2026-05-22T03:01:47.404+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:01:47,404 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-22T03:01:47.404+0000] {legacy_client.py:192} INFO - [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-22T03:01:47.407+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:01:47,407 INFO Request ID is 956ccce5-530e-4690-87b8-da7eba2e2e70
+[2026-05-22T03:01:47.407+0000] {legacy_client.py:192} INFO - Request ID is 956ccce5-530e-4690-87b8-da7eba2e2e70
+[2026-05-22T03:01:49.796+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:01:49,796 INFO status has been updated to accepted
+[2026-05-22T03:01:49.796+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-05-22T03:02:11.926+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:02:11,926 INFO status has been updated to successful
+[2026-05-22T03:02:11.926+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-05-22T03:02:12.353+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2026-05-22/61161fcc301c4ca94c66450e7b3ec6f8.nc
+[2026-05-22T03:02:13.360+0000] {logging_mixin.py:188} WARNING - 61161fcc301c4ca94c66450e7b3ec6f8.nc:   0%|          | 0.00/507k [00:00<?, ?B/s]
+[2026-05-22T03:02:15.399+0000] {logging_mixin.py:188} WARNING - 61161fcc301c4ca94c66450e7b3ec6f8.nc: 100%|##########| 507k/507k [00:02<00:00, 255kB/s]
+[2026-05-22T03:02:15.418+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-05-22T03:02:15.431+0000] {era5_functions.py:131} INFO - [DOWNLOAD] COMPLETE (29.6s)
+[2026-05-22T03:02:15.516+0000] {era5_functions.py:63} WARNING - [VALIDATE NC] instant_20260517.nc → NOT READY (4/24)
+[2026-05-22T03:02:15.521+0000] {era5_functions.py:143} WARNING - [DOWNLOAD] FAILED (2/5) → invalid nc
+[2026-05-22T03:03:15.529+0000] {era5_functions.py:123} INFO - [DOWNLOAD] 3/5 → instant_20260517.nc
+[2026-05-22T03:03:17.065+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:03:17,064 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-22T03:03:17.064+0000] {legacy_client.py:192} INFO - [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-22T03:03:17.068+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:03:17,067 INFO Request ID is 18d65044-1878-47f7-9d0b-c23b0182120b
+[2026-05-22T03:03:17.067+0000] {legacy_client.py:192} INFO - Request ID is 18d65044-1878-47f7-9d0b-c23b0182120b
+[2026-05-22T03:03:17.281+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:03:17,280 INFO status has been updated to accepted
+[2026-05-22T03:03:17.280+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-05-22T03:03:32.150+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:03:32,150 INFO status has been updated to running
+[2026-05-22T03:03:32.150+0000] {legacy_client.py:192} INFO - status has been updated to running
+[2026-05-22T03:03:39.959+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:03:39,959 INFO status has been updated to successful
+[2026-05-22T03:03:39.959+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-05-22T03:03:40.381+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2026-05-22/1d9492958053a3871d33e78709dbc89d.nc
+[2026-05-22T03:03:41.433+0000] {logging_mixin.py:188} WARNING - 1d9492958053a3871d33e78709dbc89d.nc:   0%|          | 0.00/507k [00:00<?, ?B/s]
+[2026-05-22T03:03:43.421+0000] {logging_mixin.py:188} WARNING - 1d9492958053a3871d33e78709dbc89d.nc: 100%|##########| 507k/507k [00:01<00:00, 261kB/s]
+[2026-05-22T03:03:43.443+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-05-22T03:03:43.459+0000] {era5_functions.py:131} INFO - [DOWNLOAD] COMPLETE (27.9s)
+[2026-05-22T03:03:43.538+0000] {era5_functions.py:63} WARNING - [VALIDATE NC] instant_20260517.nc → NOT READY (4/24)
+[2026-05-22T03:03:43.543+0000] {era5_functions.py:143} WARNING - [DOWNLOAD] FAILED (3/5) → invalid nc
+[2026-05-22T03:04:43.553+0000] {era5_functions.py:123} INFO - [DOWNLOAD] 4/5 → instant_20260517.nc
+[2026-05-22T03:04:45.068+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:04:45,067 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-22T03:04:45.067+0000] {legacy_client.py:192} INFO - [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-22T03:04:45.070+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:04:45,070 INFO Request ID is 3c02ad5a-3162-424f-a46e-0c0adeaa6855
+[2026-05-22T03:04:45.070+0000] {legacy_client.py:192} INFO - Request ID is 3c02ad5a-3162-424f-a46e-0c0adeaa6855
+[2026-05-22T03:04:45.276+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:04:45,276 INFO status has been updated to accepted
+[2026-05-22T03:04:45.276+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-05-22T03:05:07.521+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:05:07,520 INFO status has been updated to running
+[2026-05-22T03:05:07.520+0000] {legacy_client.py:192} INFO - status has been updated to running
+[2026-05-22T03:05:21.169+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:05:21,169 INFO status has been updated to successful
+[2026-05-22T03:05:21.169+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-05-22T03:05:21.612+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2026-05-22/baf18a4ff978a60e21344f225dcd8f83.nc
+[2026-05-22T03:05:22.655+0000] {logging_mixin.py:188} WARNING - baf18a4ff978a60e21344f225dcd8f83.nc:   0%|          | 0.00/507k [00:00<?, ?B/s]
+[2026-05-22T03:05:24.640+0000] {logging_mixin.py:188} WARNING - baf18a4ff978a60e21344f225dcd8f83.nc: 100%|##########| 507k/507k [00:01<00:00, 262kB/s]
+[2026-05-22T03:05:24.663+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-05-22T03:05:24.681+0000] {era5_functions.py:131} INFO - [DOWNLOAD] COMPLETE (41.1s)
+[2026-05-22T03:05:24.763+0000] {era5_functions.py:63} WARNING - [VALIDATE NC] instant_20260517.nc → NOT READY (4/24)
+[2026-05-22T03:05:24.767+0000] {era5_functions.py:143} WARNING - [DOWNLOAD] FAILED (4/5) → invalid nc
+[2026-05-22T03:06:24.775+0000] {era5_functions.py:123} INFO - [DOWNLOAD] 5/5 → instant_20260517.nc
+[2026-05-22T03:06:26.787+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:06:26,787 INFO [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-22T03:06:26.787+0000] {legacy_client.py:192} INFO - [2025-12-11T00:00:00] Please note that a dedicated catalogue entry for this dataset, post-processed and stored in Analysis Ready Cloud Optimized (ARCO) format (Zarr), is available for optimised time-series retrievals (i.e. for retrieving data from selected variables for a single point over an extended period of time in an efficient way). You can discover it [here](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries?tab=overview)
+[2026-05-22T03:06:26.790+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:06:26,790 INFO Request ID is fbf623ad-cf13-436a-a20f-3c4bbbfca181
+[2026-05-22T03:06:26.790+0000] {legacy_client.py:192} INFO - Request ID is fbf623ad-cf13-436a-a20f-3c4bbbfca181
+[2026-05-22T03:06:29.410+0000] {logging_mixin.py:188} WARNING - 2026-05-22 03:06:29,409 INFO status has been updated to accepted
+[2026-05-22T03:06:29.409+0000] {legacy_client.py:192} INFO - status has been updated to accepted

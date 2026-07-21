@@ -1,0 +1,53 @@
+[2026-05-22T10:00:03.278+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-05-22T10:00:03.309+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_instant scheduled__2026-05-22T09:00:00+00:00 [queued]>
+[2026-05-22T10:00:03.323+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_ecmwf_pipeline.era5_instant scheduled__2026-05-22T09:00:00+00:00 [queued]>
+[2026-05-22T10:00:03.325+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-05-22T10:00:03.342+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): era5_instant> on 2026-05-22 09:00:00+00:00
+[2026-05-22T10:00:03.358+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=5159) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-22T10:00:03.362+0000] {standard_task_runner.py:63} INFO - Started process 5170 to run task
+[2026-05-22T10:00:03.362+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_ecmwf_pipeline', 'era5_instant', 'scheduled__2026-05-22T09:00:00+00:00', '--job-id', '320', '--raw', '--subdir', 'DAGS_FOLDER/era5_dag.py', '--cfg-path', '/tmp/tmp7wz8726l']
+[2026-05-22T10:00:03.367+0000] {standard_task_runner.py:91} INFO - Job 320: Subtask era5_instant
+[2026-05-22T10:00:03.454+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_ecmwf_pipeline.era5_instant scheduled__2026-05-22T09:00:00+00:00 [running]> on host fc8478f399e7
+[2026-05-22T10:00:03.581+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='era5_ecmwf_pipeline' AIRFLOW_CTX_TASK_ID='era5_instant' AIRFLOW_CTX_EXECUTION_DATE='2026-05-22T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-22T09:00:00+00:00'
+[2026-05-22T10:00:03.583+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-05-22T10:00:03.602+0000] {logging_mixin.py:188} INFO - RUN → instant | 2026-05-17
+[2026-05-22T10:00:03.619+0000] {era5_logger.py:51} INFO - Log file: logs/era5/2026/05/17/era5_20260517.log
+[2026-05-22T10:00:03.620+0000] {era5_functions.py:329} INFO - ERA5 [INSTANT] START: 2026-05-17
+[2026-05-22T10:00:04.666+0000] {era5_functions.py:285} INFO - ============================================================
+[2026-05-22T10:00:04.668+0000] {era5_functions.py:286} INFO - JOB : INSTANT | 2026-05-17
+[2026-05-22T10:00:04.669+0000] {era5_functions.py:287} INFO - VARS: ['t2m', 'd2m', 'sp', 'blh', 'u10', 'v10']
+[2026-05-22T10:00:04.670+0000] {era5_functions.py:288} INFO - ============================================================
+[2026-05-22T10:00:05.161+0000] {era5_functions.py:63} WARNING - [VALIDATE NC] instant_20260517.nc → NOT READY (4/24)
+[2026-05-22T10:00:05.166+0000] {era5_functions.py:123} WARNING - [NC] ERA5 not ready → instant_20260517.nc
+[2026-05-22T10:00:05.168+0000] {era5_functions.py:295} WARNING - [PIPELINE] skip tif → nc not ready
+[2026-05-22T10:00:05.169+0000] {era5_functions.py:341} INFO - ERA5 [INSTANT] COMPLETE ✓
+[2026-05-22T10:00:05.171+0000] {logging_mixin.py:188} INFO - RUN → instant | 2026-05-16
+[2026-05-22T10:00:05.178+0000] {era5_logger.py:51} INFO - Log file: logs/era5/2026/05/16/era5_20260516.log
+[2026-05-22T10:00:05.179+0000] {era5_functions.py:329} INFO - ERA5 [INSTANT] START: 2026-05-16
+[2026-05-22T10:00:06.167+0000] {era5_functions.py:285} INFO - ============================================================
+[2026-05-22T10:00:06.169+0000] {era5_functions.py:286} INFO - JOB : INSTANT | 2026-05-16
+[2026-05-22T10:00:06.170+0000] {era5_functions.py:287} INFO - VARS: ['t2m', 'd2m', 'sp', 'blh', 'u10', 'v10']
+[2026-05-22T10:00:06.171+0000] {era5_functions.py:288} INFO - ============================================================
+[2026-05-22T10:00:06.244+0000] {era5_functions.py:63} WARNING - [VALIDATE NC] instant_20260516.nc → NOT READY (2/24)
+[2026-05-22T10:00:06.248+0000] {era5_functions.py:123} WARNING - [NC] ERA5 not ready → instant_20260516.nc
+[2026-05-22T10:00:06.250+0000] {era5_functions.py:295} WARNING - [PIPELINE] skip tif → nc not ready
+[2026-05-22T10:00:06.251+0000] {era5_functions.py:341} INFO - ERA5 [INSTANT] COMPLETE ✓
+[2026-05-22T10:00:06.252+0000] {logging_mixin.py:188} INFO - RUN → instant | 2026-05-15
+[2026-05-22T10:00:06.260+0000] {era5_logger.py:51} INFO - Log file: logs/era5/2026/05/15/era5_20260515.log
+[2026-05-22T10:00:06.261+0000] {era5_functions.py:329} INFO - ERA5 [INSTANT] START: 2026-05-15
+[2026-05-22T10:00:07.300+0000] {era5_functions.py:285} INFO - ============================================================
+[2026-05-22T10:00:07.302+0000] {era5_functions.py:286} INFO - JOB : INSTANT | 2026-05-15
+[2026-05-22T10:00:07.303+0000] {era5_functions.py:287} INFO - VARS: ['t2m', 'd2m', 'sp', 'blh', 'u10', 'v10']
+[2026-05-22T10:00:07.305+0000] {era5_functions.py:288} INFO - ============================================================
+[2026-05-22T10:00:07.385+0000] {era5_functions.py:63} WARNING - [VALIDATE NC] instant_20260515.nc → NOT READY (2/24)
+[2026-05-22T10:00:07.395+0000] {era5_functions.py:123} WARNING - [NC] ERA5 not ready → instant_20260515.nc
+[2026-05-22T10:00:07.396+0000] {era5_functions.py:295} WARNING - [PIPELINE] skip tif → nc not ready
+[2026-05-22T10:00:07.400+0000] {era5_functions.py:341} INFO - ERA5 [INSTANT] COMPLETE ✓
+[2026-05-22T10:00:07.402+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-05-22T10:00:07.404+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-05-22T10:00:07.419+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=era5_ecmwf_pipeline, task_id=era5_instant, run_id=scheduled__2026-05-22T09:00:00+00:00, execution_date=20260522T090000, start_date=20260522T100003, end_date=20260522T100007
+[2026-05-22T10:00:07.482+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-05-22T10:00:07.502+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-22T10:00:07.505+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

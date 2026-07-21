@@ -1,0 +1,236 @@
+[2026-07-17T03:48:16.829+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-07-17T03:48:16.856+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_download_pipeline.era5_accum scheduled__2026-06-24T07:00:00+00:00 [queued]>
+[2026-07-17T03:48:16.867+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_download_pipeline.era5_accum scheduled__2026-06-24T07:00:00+00:00 [queued]>
+[2026-07-17T03:48:16.869+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-07-17T03:48:16.892+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): era5_accum> on 2026-06-24 07:00:00+00:00
+[2026-07-17T03:48:16.904+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=263) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-07-17T03:48:16.908+0000] {standard_task_runner.py:63} INFO - Started process 265 to run task
+[2026-07-17T03:48:16.909+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_download_pipeline', 'era5_accum', 'scheduled__2026-06-24T07:00:00+00:00', '--job-id', '2274', '--raw', '--subdir', 'DAGS_FOLDER/era5_dag.py', '--cfg-path', '/tmp/tmpjt3ustpv']
+[2026-07-17T03:48:16.913+0000] {standard_task_runner.py:91} INFO - Job 2274: Subtask era5_accum
+[2026-07-17T03:48:17.002+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_download_pipeline.era5_accum scheduled__2026-06-24T07:00:00+00:00 [running]> on host 01cd476fb21a
+[2026-07-17T03:48:17.160+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='era5' AIRFLOW_CTX_DAG_ID='era5_download_pipeline' AIRFLOW_CTX_TASK_ID='era5_accum' AIRFLOW_CTX_EXECUTION_DATE='2026-06-24T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-24T07:00:00+00:00'
+[2026-07-17T03:48:17.163+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-07-17T03:48:18.242+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:48:18 [INFO] === START job=accum date=2026-06-24 ===
+[2026-07-17T03:48:18.242+0000] {era5_functions.py:368} INFO - === START job=accum date=2026-06-24 ===
+[2026-07-17T03:48:18.244+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:48:18 [INFO] --- job=accum date=20260624 ---
+[2026-07-17T03:48:18.244+0000] {era5_functions.py:330} INFO - --- job=accum date=20260624 ---
+[2026-07-17T03:48:22.376+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:48:22,376 INFO Request ID is 344464d7-c558-4109-afa0-fe150b6fe734
+[2026-07-17T03:48:22.376+0000] {legacy_client.py:192} INFO - Request ID is 344464d7-c558-4109-afa0-fe150b6fe734
+[2026-07-17T03:48:22.625+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:48:22,625 INFO status has been updated to accepted
+[2026-07-17T03:48:22.625+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-17T03:48:44.932+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:48:44,932 INFO status has been updated to running
+[2026-07-17T03:48:44.932+0000] {legacy_client.py:192} INFO - status has been updated to running
+[2026-07-17T03:48:56.764+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:48:56,764 INFO status has been updated to successful
+[2026-07-17T03:48:56.764+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-17T03:48:59.190+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2026-07-17/98c8867e989442eb266c05511b3d4316.nc
+[2026-07-17T03:49:00.491+0000] {logging_mixin.py:188} WARNING - 98c8867e989442eb266c05511b3d4316.nc:   0%|          | 0.00/334k [00:00<?, ?B/s]
+[2026-07-17T03:49:02.252+0000] {logging_mixin.py:188} WARNING - 98c8867e989442eb266c05511b3d4316.nc: 100%|##########| 334k/334k [00:01<00:00, 194kB/s]
+[2026-07-17T03:49:02.254+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-07-17T03:49:02.528+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:49:02 [INFO] CDS timestep available: 24
+[2026-07-17T03:49:02.528+0000] {era5_functions.py:128} INFO - CDS timestep available: 24
+[2026-07-17T03:49:02.556+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:49:02 [INFO] download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/24/accum_20260624.nc
+[2026-07-17T03:49:02.555+0000] {era5_functions.py:200} INFO - download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/24/accum_20260624.nc
+[2026-07-17T03:49:05.789+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:49:05,788 INFO Request ID is 587897bd-97e2-466d-84fc-f145dd51f4e8
+[2026-07-17T03:49:05.788+0000] {legacy_client.py:192} INFO - Request ID is 587897bd-97e2-466d-84fc-f145dd51f4e8
+[2026-07-17T03:49:06.021+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:49:06,021 INFO status has been updated to accepted
+[2026-07-17T03:49:06.021+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-17T03:49:40.326+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:49:40,326 INFO status has been updated to running
+[2026-07-17T03:49:40.326+0000] {legacy_client.py:192} INFO - status has been updated to running
+[2026-07-17T03:49:57.637+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:49:57,637 INFO status has been updated to successful
+[2026-07-17T03:49:57.637+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-17T03:49:58.086+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2026-07-17/98c8867e989442eb266c05511b3d4316.nc
+[2026-07-17T03:49:58.753+0000] {logging_mixin.py:188} WARNING - 98c8867e989442eb266c05511b3d4316.nc:   0%|          | 0.00/334k [00:00<?, ?B/s]
+[2026-07-17T03:50:00.201+0000] {logging_mixin.py:188} WARNING - 98c8867e989442eb266c05511b3d4316.nc: 100%|##########| 334k/334k [00:01<00:00, 236kB/s]
+[2026-07-17T03:50:00.222+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-07-17T03:50:00.312+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:50:00 [INFO] nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/24/accum_20260624.nc
+[2026-07-17T03:50:00.312+0000] {era5_functions.py:204} INFO - nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/24/accum_20260624.nc
+[2026-07-17T03:50:00.366+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:50:00 [INFO] local timestep: 24 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/24/accum_20260624.nc
+[2026-07-17T03:50:00.366+0000] {era5_functions.py:152} INFO - local timestep: 24 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/24/accum_20260624.nc
+[2026-07-17T03:50:00.532+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:50:00 [INFO] tif ok (bands=24): /opt/***/era5/ecmwf/data/tif/2026/06/24/tp_20260624.tif
+[2026-07-17T03:50:00.532+0000] {era5_functions.py:304} INFO - tif ok (bands=24): /opt/***/era5/ecmwf/data/tif/2026/06/24/tp_20260624.tif
+[2026-07-17T03:50:00.536+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:50:00 [INFO] --- job=accum date=20260623 ---
+[2026-07-17T03:50:00.536+0000] {era5_functions.py:330} INFO - --- job=accum date=20260623 ---
+[2026-07-17T03:50:01.334+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:50:01,334 INFO Request ID is ace5f2d1-f4f0-4be9-a2b1-6c41dcf0e3ba
+[2026-07-17T03:50:01.334+0000] {legacy_client.py:192} INFO - Request ID is ace5f2d1-f4f0-4be9-a2b1-6c41dcf0e3ba
+[2026-07-17T03:50:01.556+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:50:01,556 INFO status has been updated to accepted
+[2026-07-17T03:50:01.556+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-17T03:50:35.743+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:50:35,743 INFO status has been updated to successful
+[2026-07-17T03:50:35.743+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-17T03:50:36.648+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2026-07-17/466570a7b2ad3faf3453320c63bce7ca.nc
+[2026-07-17T03:50:37.358+0000] {logging_mixin.py:188} WARNING - 466570a7b2ad3faf3453320c63bce7ca.nc:   0%|          | 0.00/326k [00:00<?, ?B/s]
+[2026-07-17T03:50:38.782+0000] {logging_mixin.py:188} WARNING - 466570a7b2ad3faf3453320c63bce7ca.nc: 100%|##########| 326k/326k [00:01<00:00, 235kB/s]
+[2026-07-17T03:50:38.785+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-07-17T03:50:38.796+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:50:38 [INFO] CDS timestep available: 24
+[2026-07-17T03:50:38.796+0000] {era5_functions.py:128} INFO - CDS timestep available: 24
+[2026-07-17T03:50:38.825+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:50:38 [INFO] download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/23/accum_20260623.nc
+[2026-07-17T03:50:38.825+0000] {era5_functions.py:200} INFO - download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/23/accum_20260623.nc
+[2026-07-17T03:50:39.615+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:50:39,615 INFO Request ID is 5bee64c7-e376-4f56-9097-97cb44ecfb3d
+[2026-07-17T03:50:39.615+0000] {legacy_client.py:192} INFO - Request ID is 5bee64c7-e376-4f56-9097-97cb44ecfb3d
+[2026-07-17T03:50:39.817+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:50:39,817 INFO status has been updated to accepted
+[2026-07-17T03:50:39.817+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-17T03:51:03.740+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:03,740 INFO status has been updated to successful
+[2026-07-17T03:51:03.740+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-17T03:51:04.184+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2026-07-17/466570a7b2ad3faf3453320c63bce7ca.nc
+[2026-07-17T03:51:05.904+0000] {logging_mixin.py:188} WARNING - 466570a7b2ad3faf3453320c63bce7ca.nc:   0%|          | 0.00/326k [00:00<?, ?B/s]
+[2026-07-17T03:51:08.036+0000] {logging_mixin.py:188} WARNING - 466570a7b2ad3faf3453320c63bce7ca.nc: 100%|##########| 326k/326k [00:02<00:00, 157kB/s]
+[2026-07-17T03:51:08.063+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-07-17T03:51:08.201+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:08 [INFO] nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/23/accum_20260623.nc
+[2026-07-17T03:51:08.201+0000] {era5_functions.py:204} INFO - nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/23/accum_20260623.nc
+[2026-07-17T03:51:08.272+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:08 [INFO] local timestep: 24 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/23/accum_20260623.nc
+[2026-07-17T03:51:08.271+0000] {era5_functions.py:152} INFO - local timestep: 24 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/23/accum_20260623.nc
+[2026-07-17T03:51:08.433+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:08 [INFO] tif ok (bands=24): /opt/***/era5/ecmwf/data/tif/2026/06/23/tp_20260623.tif
+[2026-07-17T03:51:08.433+0000] {era5_functions.py:304} INFO - tif ok (bands=24): /opt/***/era5/ecmwf/data/tif/2026/06/23/tp_20260623.tif
+[2026-07-17T03:51:08.438+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:08 [INFO] --- job=accum date=20260622 ---
+[2026-07-17T03:51:08.438+0000] {era5_functions.py:330} INFO - --- job=accum date=20260622 ---
+[2026-07-17T03:51:09.277+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:09,276 INFO Request ID is 299b4db6-c66b-4335-9684-33b44d1a2523
+[2026-07-17T03:51:09.276+0000] {legacy_client.py:192} INFO - Request ID is 299b4db6-c66b-4335-9684-33b44d1a2523
+[2026-07-17T03:51:09.531+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:09,531 INFO status has been updated to accepted
+[2026-07-17T03:51:09.531+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-17T03:51:24.151+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:24,151 INFO status has been updated to running
+[2026-07-17T03:51:24.151+0000] {legacy_client.py:192} INFO - status has been updated to running
+[2026-07-17T03:51:33.985+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:33,984 INFO status has been updated to successful
+[2026-07-17T03:51:33.984+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-17T03:51:34.400+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2026-07-17/fb07e9985f6914d0cddfab1a433bec8.nc
+[2026-07-17T03:51:35.061+0000] {logging_mixin.py:188} WARNING - fb07e9985f6914d0cddfab1a433bec8.nc:   0%|          | 0.00/324k [00:00<?, ?B/s]
+[2026-07-17T03:51:36.485+0000] {logging_mixin.py:188} WARNING - fb07e9985f6914d0cddfab1a433bec8.nc: 100%|##########| 324k/324k [00:01<00:00, 233kB/s]
+[2026-07-17T03:51:36.488+0000] {logging_mixin.py:188} WARNING -                                                                                      
+[2026-07-17T03:51:36.500+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:36 [INFO] CDS timestep available: 24
+[2026-07-17T03:51:36.500+0000] {era5_functions.py:128} INFO - CDS timestep available: 24
+[2026-07-17T03:51:36.538+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:36 [INFO] download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/22/accum_20260622.nc
+[2026-07-17T03:51:36.537+0000] {era5_functions.py:200} INFO - download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/22/accum_20260622.nc
+[2026-07-17T03:51:37.619+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:37,618 INFO Request ID is d1fcf82d-55a3-4e57-8e95-f6dd939523c7
+[2026-07-17T03:51:37.618+0000] {legacy_client.py:192} INFO - Request ID is d1fcf82d-55a3-4e57-8e95-f6dd939523c7
+[2026-07-17T03:51:37.830+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:51:37,830 INFO status has been updated to accepted
+[2026-07-17T03:51:37.830+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-17T03:52:11.551+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:52:11,551 INFO status has been updated to successful
+[2026-07-17T03:52:11.551+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-17T03:52:11.983+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2026-07-17/fb07e9985f6914d0cddfab1a433bec8.nc
+[2026-07-17T03:52:12.639+0000] {logging_mixin.py:188} WARNING - fb07e9985f6914d0cddfab1a433bec8.nc:   0%|          | 0.00/324k [00:00<?, ?B/s]
+[2026-07-17T03:52:14.238+0000] {logging_mixin.py:188} WARNING - fb07e9985f6914d0cddfab1a433bec8.nc: 100%|##########| 324k/324k [00:01<00:00, 208kB/s]
+[2026-07-17T03:52:14.256+0000] {logging_mixin.py:188} WARNING -                                                                                      
+[2026-07-17T03:52:14.370+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:52:14 [INFO] nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/22/accum_20260622.nc
+[2026-07-17T03:52:14.370+0000] {era5_functions.py:204} INFO - nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/22/accum_20260622.nc
+[2026-07-17T03:52:14.446+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:52:14 [INFO] local timestep: 24 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/22/accum_20260622.nc
+[2026-07-17T03:52:14.445+0000] {era5_functions.py:152} INFO - local timestep: 24 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/22/accum_20260622.nc
+[2026-07-17T03:52:14.636+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:52:14 [INFO] tif ok (bands=24): /opt/***/era5/ecmwf/data/tif/2026/06/22/tp_20260622.tif
+[2026-07-17T03:52:14.636+0000] {era5_functions.py:304} INFO - tif ok (bands=24): /opt/***/era5/ecmwf/data/tif/2026/06/22/tp_20260622.tif
+[2026-07-17T03:52:14.642+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:52:14 [INFO] --- job=accum date=20260621 ---
+[2026-07-17T03:52:14.642+0000] {era5_functions.py:330} INFO - --- job=accum date=20260621 ---
+[2026-07-17T03:52:16.412+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:52:16,412 INFO Request ID is 517c2fc0-06a6-4e03-8388-56b87007c820
+[2026-07-17T03:52:16.412+0000] {legacy_client.py:192} INFO - Request ID is 517c2fc0-06a6-4e03-8388-56b87007c820
+[2026-07-17T03:52:16.621+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:52:16,621 INFO status has been updated to accepted
+[2026-07-17T03:52:16.621+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-17T03:52:27.593+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:52:27,593 INFO status has been updated to running
+[2026-07-17T03:52:27.593+0000] {legacy_client.py:192} INFO - status has been updated to running
+[2026-07-17T03:52:52.260+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:52:52,260 INFO status has been updated to successful
+[2026-07-17T03:52:52.260+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-17T03:52:52.681+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2026-07-17/5aa9a0862e775c4c4cc4a1c7b621c3ec.nc
+[2026-07-17T03:52:53.655+0000] {logging_mixin.py:188} WARNING - 5aa9a0862e775c4c4cc4a1c7b621c3ec.nc:   0%|          | 0.00/344k [00:00<?, ?B/s]
+[2026-07-17T03:52:58.033+0000] {logging_mixin.py:188} WARNING - 5aa9a0862e775c4c4cc4a1c7b621c3ec.nc: 100%|##########| 344k/344k [00:04<00:00, 80.4kB/s]
+[2026-07-17T03:52:58.035+0000] {logging_mixin.py:188} WARNING -                                                                                        
+[2026-07-17T03:52:58.043+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:52:58 [INFO] CDS timestep available: 24
+[2026-07-17T03:52:58.043+0000] {era5_functions.py:128} INFO - CDS timestep available: 24
+[2026-07-17T03:52:58.061+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:52:58 [INFO] download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/21/accum_20260621.nc
+[2026-07-17T03:52:58.061+0000] {era5_functions.py:200} INFO - download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/21/accum_20260621.nc
+[2026-07-17T03:53:00.870+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:53:00,869 INFO Request ID is a3a5d18a-bdbe-4d8a-b66d-4fd4e6093abe
+[2026-07-17T03:53:00.869+0000] {legacy_client.py:192} INFO - Request ID is a3a5d18a-bdbe-4d8a-b66d-4fd4e6093abe
+[2026-07-17T03:53:01.087+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:53:01,086 INFO status has been updated to accepted
+[2026-07-17T03:53:01.086+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-17T03:53:35.153+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:53:35,153 INFO status has been updated to running
+[2026-07-17T03:53:35.153+0000] {legacy_client.py:192} INFO - status has been updated to running
+[2026-07-17T03:53:52.683+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:53:52,683 INFO status has been updated to successful
+[2026-07-17T03:53:52.683+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-17T03:53:53.128+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-1/2026-07-17/5aa9a0862e775c4c4cc4a1c7b621c3ec.nc
+[2026-07-17T03:53:54.161+0000] {logging_mixin.py:188} WARNING - 5aa9a0862e775c4c4cc4a1c7b621c3ec.nc:   0%|          | 0.00/344k [00:00<?, ?B/s]
+[2026-07-17T03:53:56.727+0000] {logging_mixin.py:188} WARNING - 5aa9a0862e775c4c4cc4a1c7b621c3ec.nc: 100%|##########| 344k/344k [00:02<00:00, 137kB/s]
+[2026-07-17T03:53:56.748+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-07-17T03:53:56.823+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:53:56 [INFO] nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/21/accum_20260621.nc
+[2026-07-17T03:53:56.823+0000] {era5_functions.py:204} INFO - nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/21/accum_20260621.nc
+[2026-07-17T03:53:56.894+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:53:56 [INFO] local timestep: 24 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/21/accum_20260621.nc
+[2026-07-17T03:53:56.894+0000] {era5_functions.py:152} INFO - local timestep: 24 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/21/accum_20260621.nc
+[2026-07-17T03:53:57.088+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:53:57 [INFO] tif ok (bands=24): /opt/***/era5/ecmwf/data/tif/2026/06/21/tp_20260621.tif
+[2026-07-17T03:53:57.087+0000] {era5_functions.py:304} INFO - tif ok (bands=24): /opt/***/era5/ecmwf/data/tif/2026/06/21/tp_20260621.tif
+[2026-07-17T03:53:57.095+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:53:57 [INFO] --- job=accum date=20260620 ---
+[2026-07-17T03:53:57.094+0000] {era5_functions.py:330} INFO - --- job=accum date=20260620 ---
+[2026-07-17T03:53:58.084+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:53:58,083 INFO Request ID is 717f7620-8d91-464e-920d-21f8ec070ada
+[2026-07-17T03:53:58.083+0000] {legacy_client.py:192} INFO - Request ID is 717f7620-8d91-464e-920d-21f8ec070ada
+[2026-07-17T03:53:58.305+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:53:58,304 INFO status has been updated to accepted
+[2026-07-17T03:53:58.304+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-17T03:54:32.372+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:54:32,372 INFO status has been updated to successful
+[2026-07-17T03:54:32.372+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-17T03:54:32.919+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2026-07-17/8f89c9e8ecd9006fcd5c6b8663d57dff.nc
+[2026-07-17T03:54:33.615+0000] {logging_mixin.py:188} WARNING - 8f89c9e8ecd9006fcd5c6b8663d57dff.nc:   0%|          | 0.00/366k [00:00<?, ?B/s]
+[2026-07-17T03:54:36.468+0000] {logging_mixin.py:188} WARNING - 8f89c9e8ecd9006fcd5c6b8663d57dff.nc: 100%|##########| 366k/366k [00:02<00:00, 132kB/s]
+[2026-07-17T03:54:36.472+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-07-17T03:54:36.491+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:54:36 [INFO] CDS timestep available: 24
+[2026-07-17T03:54:36.491+0000] {era5_functions.py:128} INFO - CDS timestep available: 24
+[2026-07-17T03:54:36.528+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:54:36 [INFO] download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/20/accum_20260620.nc
+[2026-07-17T03:54:36.528+0000] {era5_functions.py:200} INFO - download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/20/accum_20260620.nc
+[2026-07-17T03:54:37.267+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:54:37,267 INFO Request ID is 0acf0aad-126a-4073-be44-a4239ca8c632
+[2026-07-17T03:54:37.267+0000] {legacy_client.py:192} INFO - Request ID is 0acf0aad-126a-4073-be44-a4239ca8c632
+[2026-07-17T03:54:37.474+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:54:37,473 INFO status has been updated to accepted
+[2026-07-17T03:54:37.473+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-17T03:55:29.836+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:55:29,836 INFO status has been updated to successful
+[2026-07-17T03:55:29.836+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-17T03:55:30.285+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2026-07-17/8f89c9e8ecd9006fcd5c6b8663d57dff.nc
+[2026-07-17T03:55:31.342+0000] {logging_mixin.py:188} WARNING - 8f89c9e8ecd9006fcd5c6b8663d57dff.nc:   0%|          | 0.00/366k [00:00<?, ?B/s]
+[2026-07-17T03:55:32.754+0000] {logging_mixin.py:188} WARNING - 8f89c9e8ecd9006fcd5c6b8663d57dff.nc: 100%|##########| 366k/366k [00:01<00:00, 266kB/s]
+[2026-07-17T03:55:32.771+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-07-17T03:55:32.877+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:55:32 [INFO] nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/20/accum_20260620.nc
+[2026-07-17T03:55:32.877+0000] {era5_functions.py:204} INFO - nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/20/accum_20260620.nc
+[2026-07-17T03:55:32.932+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:55:32 [INFO] local timestep: 24 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/20/accum_20260620.nc
+[2026-07-17T03:55:32.931+0000] {era5_functions.py:152} INFO - local timestep: 24 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/20/accum_20260620.nc
+[2026-07-17T03:55:33.099+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:55:33 [INFO] tif ok (bands=24): /opt/***/era5/ecmwf/data/tif/2026/06/20/tp_20260620.tif
+[2026-07-17T03:55:33.099+0000] {era5_functions.py:304} INFO - tif ok (bands=24): /opt/***/era5/ecmwf/data/tif/2026/06/20/tp_20260620.tif
+[2026-07-17T03:55:33.104+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:55:33 [INFO] --- job=accum date=20260619 ---
+[2026-07-17T03:55:33.104+0000] {era5_functions.py:330} INFO - --- job=accum date=20260619 ---
+[2026-07-17T03:55:33.917+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:55:33,916 INFO Request ID is 7d818dce-48eb-4a9c-b9cf-185dafece328
+[2026-07-17T03:55:33.916+0000] {legacy_client.py:192} INFO - Request ID is 7d818dce-48eb-4a9c-b9cf-185dafece328
+[2026-07-17T03:55:34.559+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:55:34,559 INFO status has been updated to accepted
+[2026-07-17T03:55:34.559+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-17T03:55:56.630+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:55:56,630 INFO status has been updated to running
+[2026-07-17T03:55:56.630+0000] {legacy_client.py:192} INFO - status has been updated to running
+[2026-07-17T03:56:08.239+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:08,239 INFO status has been updated to successful
+[2026-07-17T03:56:08.239+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-17T03:56:08.664+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2026-07-17/1d830c8a811cc257b352a764b8b67e2a.nc
+[2026-07-17T03:56:09.382+0000] {logging_mixin.py:188} WARNING - 1d830c8a811cc257b352a764b8b67e2a.nc:   0%|          | 0.00/341k [00:00<?, ?B/s]
+[2026-07-17T03:56:10.775+0000] {logging_mixin.py:188} WARNING - 1d830c8a811cc257b352a764b8b67e2a.nc: 100%|##########| 341k/341k [00:01<00:00, 251kB/s]
+[2026-07-17T03:56:10.779+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-07-17T03:56:10.791+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:10 [INFO] CDS timestep available: 24
+[2026-07-17T03:56:10.791+0000] {era5_functions.py:128} INFO - CDS timestep available: 24
+[2026-07-17T03:56:10.861+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:10 [INFO] local timestep: 8 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/19/accum_20260619.nc
+[2026-07-17T03:56:10.861+0000] {era5_functions.py:152} INFO - local timestep: 8 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/19/accum_20260619.nc
+[2026-07-17T03:56:10.868+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:10 [INFO] nc outdated (local=8 < cds=24), removing: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/19/accum_20260619.nc
+[2026-07-17T03:56:10.867+0000] {era5_functions.py:193} INFO - nc outdated (local=8 < cds=24), removing: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/19/accum_20260619.nc
+[2026-07-17T03:56:10.895+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:10 [INFO] download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/19/accum_20260619.nc
+[2026-07-17T03:56:10.895+0000] {era5_functions.py:200} INFO - download attempt 1/3: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/19/accum_20260619.nc
+[2026-07-17T03:56:11.739+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:11,739 INFO Request ID is c5803d50-47e3-4c7c-a6a4-c7419c3d84de
+[2026-07-17T03:56:11.739+0000] {legacy_client.py:192} INFO - Request ID is c5803d50-47e3-4c7c-a6a4-c7419c3d84de
+[2026-07-17T03:56:11.973+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:11,973 INFO status has been updated to accepted
+[2026-07-17T03:56:11.973+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-17T03:56:34.702+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:34,702 INFO status has been updated to running
+[2026-07-17T03:56:34.702+0000] {legacy_client.py:192} INFO - status has been updated to running
+[2026-07-17T03:56:48.589+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:48,589 INFO status has been updated to successful
+[2026-07-17T03:56:48.589+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-17T03:56:49.034+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-3/2026-07-17/1d830c8a811cc257b352a764b8b67e2a.nc
+[2026-07-17T03:56:49.747+0000] {logging_mixin.py:188} WARNING - 1d830c8a811cc257b352a764b8b67e2a.nc:   0%|          | 0.00/341k [00:00<?, ?B/s]
+[2026-07-17T03:56:51.218+0000] {logging_mixin.py:188} WARNING - 1d830c8a811cc257b352a764b8b67e2a.nc: 100%|##########| 341k/341k [00:01<00:00, 238kB/s]
+[2026-07-17T03:56:51.231+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-07-17T03:56:51.318+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:51 [INFO] nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/19/accum_20260619.nc
+[2026-07-17T03:56:51.317+0000] {era5_functions.py:204} INFO - nc downloaded ok: /opt/***/era5/ecmwf/data/nc/_raw/2026/06/19/accum_20260619.nc
+[2026-07-17T03:56:51.380+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:51 [INFO] local timestep: 24 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/19/accum_20260619.nc
+[2026-07-17T03:56:51.379+0000] {era5_functions.py:152} INFO - local timestep: 24 — /opt/***/era5/ecmwf/data/nc/_raw/2026/06/19/accum_20260619.nc
+[2026-07-17T03:56:51.465+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:51 [INFO] tif outdated (tif=8 < nc=24), removing: /opt/***/era5/ecmwf/data/tif/2026/06/19/tp_20260619.tif
+[2026-07-17T03:56:51.465+0000] {era5_functions.py:261} INFO - tif outdated (tif=8 < nc=24), removing: /opt/***/era5/ecmwf/data/tif/2026/06/19/tp_20260619.tif
+[2026-07-17T03:56:51.579+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:51 [INFO] tif ok (bands=24): /opt/***/era5/ecmwf/data/tif/2026/06/19/tp_20260619.tif
+[2026-07-17T03:56:51.578+0000] {era5_functions.py:304} INFO - tif ok (bands=24): /opt/***/era5/ecmwf/data/tif/2026/06/19/tp_20260619.tif
+[2026-07-17T03:56:51.585+0000] {logging_mixin.py:188} WARNING - 2026-07-17 03:56:51 [INFO] === END job=accum date=2026-06-24 ===
+[2026-07-17T03:56:51.584+0000] {era5_functions.py:379} INFO - === END job=accum date=2026-06-24 ===
+[2026-07-17T03:56:51.587+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-07-17T03:56:51.588+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-07-17T03:56:51.604+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=era5_download_pipeline, task_id=era5_accum, run_id=scheduled__2026-06-24T07:00:00+00:00, execution_date=20260624T070000, start_date=20260717T034816, end_date=20260717T035651
+[2026-07-17T03:56:51.660+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-07-17T03:56:51.683+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-07-17T03:56:51.687+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
