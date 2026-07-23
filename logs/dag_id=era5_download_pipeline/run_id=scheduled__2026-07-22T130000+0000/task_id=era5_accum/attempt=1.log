@@ -1,0 +1,76 @@
+[2026-07-22T14:00:59.237+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-07-22T14:00:59.265+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: era5_download_pipeline.era5_accum scheduled__2026-07-22T13:00:00+00:00 [queued]>
+[2026-07-22T14:00:59.282+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: era5_download_pipeline.era5_accum scheduled__2026-07-22T13:00:00+00:00 [queued]>
+[2026-07-22T14:00:59.284+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-07-22T14:00:59.302+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): era5_accum> on 2026-07-22 13:00:00+00:00
+[2026-07-22T14:00:59.314+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=40943) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-07-22T14:00:59.317+0000] {standard_task_runner.py:63} INFO - Started process 40945 to run task
+[2026-07-22T14:00:59.317+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'era5_download_pipeline', 'era5_accum', 'scheduled__2026-07-22T13:00:00+00:00', '--job-id', '2550', '--raw', '--subdir', 'DAGS_FOLDER/era5_dag.py', '--cfg-path', '/tmp/tmpto3bds9x']
+[2026-07-22T14:00:59.320+0000] {standard_task_runner.py:91} INFO - Job 2550: Subtask era5_accum
+[2026-07-22T14:00:59.395+0000] {task_command.py:426} INFO - Running <TaskInstance: era5_download_pipeline.era5_accum scheduled__2026-07-22T13:00:00+00:00 [running]> on host e2e0d31e4327
+[2026-07-22T14:00:59.512+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='era5' AIRFLOW_CTX_DAG_ID='era5_download_pipeline' AIRFLOW_CTX_TASK_ID='era5_accum' AIRFLOW_CTX_EXECUTION_DATE='2026-07-22T13:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-07-22T13:00:00+00:00'
+[2026-07-22T14:00:59.515+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-07-22T14:01:00.718+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:00 [INFO] === START ERA5 SYNC job=accum ===
+[2026-07-22T14:01:00.717+0000] {era5_functions.py:307} INFO - === START ERA5 SYNC job=accum ===
+[2026-07-22T14:01:00.721+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:00 [INFO] --- SYNC accum 20260722 ---
+[2026-07-22T14:01:00.721+0000] {era5_functions.py:124} INFO - --- SYNC accum 20260722 ---
+[2026-07-22T14:01:00.723+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:00 [INFO] CDS download 2026-07-22 attempt 1/3
+[2026-07-22T14:01:00.723+0000] {era5_functions.py:78} INFO - CDS download 2026-07-22 attempt 1/3
+[2026-07-22T14:01:01.481+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:01 [INFO] CDS data not available yet: 2026-07-22
+[2026-07-22T14:01:01.481+0000] {era5_functions.py:98} INFO - CDS data not available yet: 2026-07-22
+[2026-07-22T14:01:01.484+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:01 [INFO] --- SYNC accum 20260721 ---
+[2026-07-22T14:01:01.484+0000] {era5_functions.py:124} INFO - --- SYNC accum 20260721 ---
+[2026-07-22T14:01:01.487+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:01 [INFO] CDS download 2026-07-21 attempt 1/3
+[2026-07-22T14:01:01.487+0000] {era5_functions.py:78} INFO - CDS download 2026-07-21 attempt 1/3
+[2026-07-22T14:01:02.148+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:02 [INFO] CDS data not available yet: 2026-07-21
+[2026-07-22T14:01:02.148+0000] {era5_functions.py:98} INFO - CDS data not available yet: 2026-07-21
+[2026-07-22T14:01:02.151+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:02 [INFO] --- SYNC accum 20260720 ---
+[2026-07-22T14:01:02.151+0000] {era5_functions.py:124} INFO - --- SYNC accum 20260720 ---
+[2026-07-22T14:01:02.154+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:02 [INFO] CDS download 2026-07-20 attempt 1/3
+[2026-07-22T14:01:02.154+0000] {era5_functions.py:78} INFO - CDS download 2026-07-20 attempt 1/3
+[2026-07-22T14:01:02.787+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:02 [INFO] CDS data not available yet: 2026-07-20
+[2026-07-22T14:01:02.787+0000] {era5_functions.py:98} INFO - CDS data not available yet: 2026-07-20
+[2026-07-22T14:01:02.791+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:02 [INFO] --- SYNC accum 20260719 ---
+[2026-07-22T14:01:02.791+0000] {era5_functions.py:124} INFO - --- SYNC accum 20260719 ---
+[2026-07-22T14:01:02.795+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:02 [INFO] CDS download 2026-07-19 attempt 1/3
+[2026-07-22T14:01:02.795+0000] {era5_functions.py:78} INFO - CDS download 2026-07-19 attempt 1/3
+[2026-07-22T14:01:03.473+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:03 [INFO] CDS data not available yet: 2026-07-19
+[2026-07-22T14:01:03.473+0000] {era5_functions.py:98} INFO - CDS data not available yet: 2026-07-19
+[2026-07-22T14:01:03.477+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:03 [INFO] --- SYNC accum 20260718 ---
+[2026-07-22T14:01:03.477+0000] {era5_functions.py:124} INFO - --- SYNC accum 20260718 ---
+[2026-07-22T14:01:03.481+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:03 [INFO] CDS download 2026-07-18 attempt 1/3
+[2026-07-22T14:01:03.481+0000] {era5_functions.py:78} INFO - CDS download 2026-07-18 attempt 1/3
+[2026-07-22T14:01:04.022+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:04 [INFO] CDS data not available yet: 2026-07-18
+[2026-07-22T14:01:04.022+0000] {era5_functions.py:98} INFO - CDS data not available yet: 2026-07-18
+[2026-07-22T14:01:04.028+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:04 [INFO] --- SYNC accum 20260717 ---
+[2026-07-22T14:01:04.027+0000] {era5_functions.py:124} INFO - --- SYNC accum 20260717 ---
+[2026-07-22T14:01:04.031+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:04 [INFO] CDS download 2026-07-17 attempt 1/3
+[2026-07-22T14:01:04.030+0000] {era5_functions.py:78} INFO - CDS download 2026-07-17 attempt 1/3
+[2026-07-22T14:01:05.944+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:05,944 INFO Request ID is 1166f2a1-4592-4408-aded-6e04b3575784
+[2026-07-22T14:01:05.944+0000] {legacy_client.py:192} INFO - Request ID is 1166f2a1-4592-4408-aded-6e04b3575784
+[2026-07-22T14:01:06.149+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:06,148 INFO status has been updated to accepted
+[2026-07-22T14:01:06.148+0000] {legacy_client.py:192} INFO - status has been updated to accepted
+[2026-07-22T14:01:40.111+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:40,111 INFO status has been updated to successful
+[2026-07-22T14:01:40.111+0000] {legacy_client.py:192} INFO - status has been updated to successful
+[2026-07-22T14:01:40.560+0000] {base.py:119} INFO - Downloading https://object-store.os-api.cci2.ecmwf.int:443/cci2-prod-cache-2/2026-07-22/952f367cbb7128e982dc5baa3ec34100.nc
+[2026-07-22T14:01:41.289+0000] {logging_mixin.py:188} WARNING - 952f367cbb7128e982dc5baa3ec34100.nc:   0%|          | 0.00/214k [00:00<?, ?B/s]
+[2026-07-22T14:01:42.735+0000] {logging_mixin.py:188} WARNING - 952f367cbb7128e982dc5baa3ec34100.nc: 100%|##########| 214k/214k [00:01<00:00, 152kB/s]
+[2026-07-22T14:01:42.742+0000] {logging_mixin.py:188} WARNING -                                                                                       
+[2026-07-22T14:01:43.063+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:43 [INFO] CDS available: 2026-07-17 | 15 timestep(s)
+[2026-07-22T14:01:43.063+0000] {era5_functions.py:87} INFO - CDS available: 2026-07-17 | 15 timestep(s)
+[2026-07-22T14:01:43.117+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:43 [INFO] New timestep: 1
+[2026-07-22T14:01:43.117+0000] {era5_functions.py:161} INFO - New timestep: 1
+[2026-07-22T14:01:43.335+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:43 [INFO] NC updated: /opt/***/era5/ecmwf/data/nc/_raw/2026/07/17/accum_20260717.nc | 15 timestep(s)
+[2026-07-22T14:01:43.335+0000] {era5_functions.py:188} INFO - NC updated: /opt/***/era5/ecmwf/data/nc/_raw/2026/07/17/accum_20260717.nc | 15 timestep(s)
+[2026-07-22T14:01:43.476+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:43 [INFO] TIF updated: tp | bands=15
+[2026-07-22T14:01:43.476+0000] {era5_functions.py:271} INFO - TIF updated: tp | bands=15
+[2026-07-22T14:01:43.481+0000] {logging_mixin.py:188} WARNING - 2026-07-22 14:01:43 [INFO] === END ERA5 SYNC job=accum ===
+[2026-07-22T14:01:43.481+0000] {era5_functions.py:313} INFO - === END ERA5 SYNC job=accum ===
+[2026-07-22T14:01:43.482+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-07-22T14:01:43.483+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-07-22T14:01:43.499+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=era5_download_pipeline, task_id=era5_accum, run_id=scheduled__2026-07-22T13:00:00+00:00, execution_date=20260722T130000, start_date=20260722T140059, end_date=20260722T140143
+[2026-07-22T14:01:43.562+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-07-22T14:01:43.594+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-07-22T14:01:43.598+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
